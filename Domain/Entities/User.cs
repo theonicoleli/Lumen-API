@@ -8,5 +8,7 @@
         public string UserStatus { get; set; } = string.Empty;
         public string UserImageUrl { get; set; } = string.Empty;
         public int DonorId { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Phone { get; set; } = string.Empty;
     }
 }

@@ -1,8 +1,12 @@
-﻿namespace Application.DTOs
+﻿using Converters;
+using System.Text.Json.Serialization;
+
+namespace Application.DTOs
 {
     public class ReportCreateDto
     {
-        public long ReportDate { get; set; }
+        [JsonConverter(typeof(DateTimeCustomConverter))]
+        public DateTime ReportDate { get; set; }
         public string ReportContent { get; set; } = string.Empty;
     }
 }

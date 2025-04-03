@@ -1,9 +1,14 @@
-﻿namespace Application.DTOs
+﻿using Converters;
+using System.Text.Json.Serialization;
+
+namespace Application.DTOs
 {
     public class DonationCreateDto
     {
         public string DonationMethod { get; set; } = string.Empty;
-        public long DonationDate { get; set; }
+
+        [JsonConverter(typeof(DateTimeCustomConverter))]
+        public DateTime DonationDate { get; set; }
         public decimal DonationAmount { get; set; }
         public string DonationStatus { get; set; } = string.Empty;
         public bool DonationIsAnonymous { get; set; }

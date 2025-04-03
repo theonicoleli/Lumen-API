@@ -2,7 +2,6 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Infra.Interfaces;
-using Infra.Repositories;
 using Infra.Services;
 
 namespace Application.Services
@@ -31,6 +30,8 @@ namespace Application.Services
                 UserStatus = u.UserStatus,
                 UserImageUrl = u.UserImageUrl,
                 DonorId = u.DonorId,
+                UserBirthDate = u.BirthDate,
+                UserPhone = u.Phone
             });
         }
 
@@ -45,16 +46,16 @@ namespace Application.Services
                 UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
-                DonorId = user.DonorId
+                DonorId = user.DonorId,
+                UserBirthDate = user.BirthDate,
+                UserPhone = user.Phone
             };
         }
 
         public async Task<UserDto> CreateUserAsync(UserCreateOrUpdateDto userDto)
         {
-
-            //string imageUrl = dto.ImageFile != null
-            //    ? await _firebaseService.UploadFileAsync(dto.ImageFile)
-            //    : null;
+            // Caso exista upload de imagem, pode ser descomentado:
+            // string imageUrl = userDto.ImageFile != null ? await _firebaseService.UploadFileAsync(userDto.ImageFile) : "";
 
             var donor = new Donor
             {
@@ -71,8 +72,11 @@ namespace Application.Services
                 UserPassword = userDto.UserPassword,
                 UserStatus = userDto.UserStatus,
                 UserImageUrl = "",
-                DonorId = donor.DonorId
+                DonorId = donor.DonorId,
+                BirthDate = userDto.UserBirthDate,
+                Phone = userDto.UserPhone
             };
+
             await _userRepository.AddAsync(user);
             await _userRepository.SaveChangesAsync();
 
@@ -83,25 +87,43 @@ namespace Application.Services
                 UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
-                DonorId = user.DonorId
+                DonorId = user.DonorId,
+                UserBirthDate = user.BirthDate,
+                UserPhone = user.Phone
             };
         }
-
 
         public async Task<UserDto> UpdateUserAsync(int id, UserCreateOrUpdateDto dto)
         {
             var user = await _userRepository.GetByIdAsync(id);
             if (user == null) return null;
 
-            //if (dto.ImageFile != null)
-            //{
-            //    var imageUrl = await _firebaseService.UploadFileAsync(dto.ImageFile);
-            //    user.UserImageUrl = imageUrl;
-            //}
+            // if (dto.ImageFile != null)
+            // {
+            //     var imageUrl = await _firebaseService.UploadFileAsync(dto.ImageFile);
+            //     user.UserImageUrl = imageUrl;
+            // }
 
-            user.UserEmail = dto.UserEmail;
-            user.UserPassword = dto.UserPassword;
-            user.UserStatus = dto.UserStatus;
+            if (!string.IsNullOrWhiteSpace(dto.UserEmail))
+            {
+                user.UserEmail = dto.UserEmail;
+            }
+            if (!string.IsNullOrWhiteSpace(dto.UserPassword))
+            {
+                user.UserPassword = dto.UserPassword;
+            }
+            if (!string.IsNullOrWhiteSpace(dto.UserStatus))
+            {
+                user.UserStatus = dto.UserStatus;
+            }
+            if (dto.UserBirthDate != default(DateTime))
+            {
+                user.BirthDate = dto.UserBirthDate;
+            }
+            if (!string.IsNullOrWhiteSpace(dto.UserPhone))
+            {
+                user.Phone = dto.UserPhone;
+            }
 
             await _userRepository.UpdateAsync(user);
             await _userRepository.SaveChangesAsync();
@@ -112,7 +134,47 @@ namespace Application.Services
                 UserEmail = user.UserEmail,
                 UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
-                UserImageUrl = user.UserImageUrl
+                UserImageUrl = user.UserImageUrl,
+                DonorId = user.DonorId,
+                UserBirthDate = user.BirthDate,
+                UserPhone = user.Phone
+            };
+        }
+        public async Task<UserDto> CreateUserAndDonorAsync(UserDonorCreateDto dto)
+        {
+            var donor = new Donor
+            {
+                DonorDocument = dto.DonorDocument,
+                DonorLocation = dto.DonorLocation
+            };
+
+            await _donorRepository.AddAsync(donor);
+            await _donorRepository.SaveChangesAsync();
+
+            var user = new User
+            {
+                UserEmail = dto.UserEmail,
+                UserPassword = dto.UserPassword,
+                UserStatus = dto.UserStatus,
+                UserImageUrl = "",
+                DonorId = donor.DonorId,
+                BirthDate = dto.UserBirthDate,
+                Phone = dto.UserPhone
+            };
+
+            await _userRepository.AddAsync(user);
+            await _userRepository.SaveChangesAsync();
+
+            return new UserDto
+            {
+                UserId = user.UserId,
+                UserEmail = user.UserEmail,
+                UserPassword = user.UserPassword,
+                UserStatus = user.UserStatus,
+                UserImageUrl = user.UserImageUrl,
+                DonorId = user.DonorId,
+                UserBirthDate = user.BirthDate,
+                UserPhone = user.Phone
             };
         }
 
@@ -134,7 +196,7 @@ namespace Application.Services
             return new UserDto
             {
                 UserId = user.UserId,
-                UserEmail = user.UserEmail,
+                UserEmail = user.UserEmail
             };
         }
     }

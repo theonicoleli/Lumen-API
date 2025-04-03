@@ -22,7 +22,9 @@ namespace Application.Services
                 OrgDescription = o.OrgDescription,
                 OrgWebsiteUrl = o.OrgWebsiteUrl,
                 OrgLocation = o.OrgLocation,
-                OrgFoundationDate = o.OrgFoundationDate
+                OrgFoundationDate = o.OrgFoundationDate,
+                AdminName = o.AdminName,
+                AdminPhone = o.AdminPhone
             });
         }
 
@@ -36,7 +38,9 @@ namespace Application.Services
                 OrgDescription = org.OrgDescription,
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate
+                OrgFoundationDate = org.OrgFoundationDate,
+                AdminName = org.AdminName,
+                AdminPhone = org.AdminPhone
             };
         }
 
@@ -47,7 +51,9 @@ namespace Application.Services
                 OrgDescription = createDto.OrgDescription,
                 OrgWebsiteUrl = createDto.OrgWebsiteUrl,
                 OrgLocation = createDto.OrgLocation,
-                OrgFoundationDate = createDto.OrgFoundationDate
+                OrgFoundationDate = createDto.OrgFoundationDate,
+                AdminName = createDto.AdminName,
+                AdminPhone = createDto.AdminPhone
             };
 
             await _orgRepository.AddAsync(org);
@@ -59,19 +65,20 @@ namespace Application.Services
                 OrgDescription = org.OrgDescription,
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate
+                OrgFoundationDate = org.OrgFoundationDate,
+                AdminName = org.AdminName,
+                AdminPhone = org.AdminPhone
             };
         }
 
-        public async Task<OrgDto> UpdateOrgAsync(int id, OrgCreateDto orgDto)
+        public async Task<OrgDto> UpdateOrgAsync(int id, OrgUpdateDto updateDto)
         {
             var org = await _orgRepository.GetByIdAsync(id);
             if (org == null) return null;
 
-            org.OrgDescription = orgDto.OrgDescription;
-            org.OrgWebsiteUrl = orgDto.OrgWebsiteUrl;
-            org.OrgLocation = orgDto.OrgLocation;
-            org.OrgFoundationDate = orgDto.OrgFoundationDate;
+            org.OrgDescription = updateDto.OrgDescription;
+            org.OrgWebsiteUrl = updateDto.OrgWebsiteUrl;
+            org.OrgLocation = updateDto.OrgLocation;
 
             await _orgRepository.UpdateAsync(org);
             await _orgRepository.SaveChangesAsync();
@@ -82,7 +89,9 @@ namespace Application.Services
                 OrgDescription = org.OrgDescription,
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate
+                OrgFoundationDate = org.OrgFoundationDate,
+                AdminName = org.AdminName,
+                AdminPhone = org.AdminPhone
             };
         }
 

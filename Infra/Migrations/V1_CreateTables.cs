@@ -26,20 +26,23 @@ namespace Infra.Migrations
                 .WithColumn("UserStatus").AsString(50)
                 .WithColumn("UserImageUrl").AsString(500)
                 .WithColumn("DonorId").AsInt32().Nullable()
-                .ForeignKey("FK_Users_Donors", "Donors", "DonorId")
-                .OnUpdate(System.Data.Rule.None);
+                    .ForeignKey("FK_Users_Donors", "Donors", "DonorId")
+                .WithColumn("BirthDate").AsDateTime().Nullable()
+                .WithColumn("Phone").AsString(50).Nullable();
 
             Create.Table("Orgs")
                 .WithColumn("OrgId").AsInt32().PrimaryKey().Identity()
                 .WithColumn("OrgDescription").AsString(500)
                 .WithColumn("OrgWebsiteUrl").AsString(200)
                 .WithColumn("OrgLocation").AsString(200)
-                .WithColumn("OrgFoundationDate").AsInt64();
+                .WithColumn("OrgFoundationDate").AsDateTime()
+                .WithColumn("AdminName").AsString(200)
+                .WithColumn("AdminPhone").AsString(50);
 
             Create.Table("Donations")
                 .WithColumn("DonationId").AsInt32().PrimaryKey().Identity()
                 .WithColumn("DonationMethod").AsString(100)
-                .WithColumn("DonationDate").AsInt64()
+                .WithColumn("DonationDate").AsDateTime()
                 .WithColumn("DonationAmount").AsDecimal(18, 2)
                 .WithColumn("DonationStatus").AsString(100)
                 .WithColumn("DonationIsAnonymous").AsBoolean()
@@ -49,7 +52,7 @@ namespace Infra.Migrations
 
             Create.Table("Reports")
                 .WithColumn("ReportId").AsInt32().PrimaryKey().Identity()
-                .WithColumn("ReportDate").AsInt64()
+                .WithColumn("ReportDate").AsDateTime()
                 .WithColumn("ReportContent").AsString(1000);
         }
 

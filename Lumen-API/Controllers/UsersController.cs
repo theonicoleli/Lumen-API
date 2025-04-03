@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -38,6 +39,24 @@ namespace Lumen_API.Controllers
         public async Task<ActionResult<UserDto>> CreateUser([FromForm] UserCreateOrUpdateDto dto)
         {
             var createdUser = await _userService.CreateUserAsync(dto);
+            return CreatedAtAction(nameof(GetUserById), new { id = createdUser.UserId }, createdUser);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("create-with-donor")]
+        public async Task<IActionResult> CreateUserAndDonor([FromBody] UserDonorCreateDto dto)
+        {
+            if (dto == null)
+            {
+                return BadRequest("Dados inválidos.");
+            }
+
+            var createdUser = await _userService.CreateUserAndDonorAsync(dto);
+            if (createdUser == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao criar usuário e doador.");
+            }
+
             return CreatedAtAction(nameof(GetUserById), new { id = createdUser.UserId }, createdUser);
         }
 

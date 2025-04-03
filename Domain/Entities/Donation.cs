@@ -4,7 +4,7 @@
     {
         public int DonationId { get; set; }
         public string DonationMethod { get; set; } = string.Empty;
-        public long DonationDate { get; set; }
+        public DateTime DonationDate { get; set; }
         public decimal DonationAmount { get; set; }
         public string DonationStatus { get; set; } = string.Empty;
         public bool DonationIsAnonymous { get; set; }

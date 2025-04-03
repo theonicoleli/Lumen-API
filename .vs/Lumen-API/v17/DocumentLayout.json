@@ -1,34 +1,138 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\",
+  "WorkspaceRootPath": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\lumen-api\\controllers\\donorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|solutionrelative:lumen-api\\controllers\\donorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\lumen-api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|solutionrelative:lumen-api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\infra\\migrations\\v1_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\infra\\migrations\\v1_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|solutionrelative:infra\\migrations\\v1_createtables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\lumen-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|solutionrelative:lumen-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\donationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\donationcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\donationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\donationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\orgcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\orgcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\orgdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\orgdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\orgupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\orgupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\reportcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\reportcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\usercreateorupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\usercreateorupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\userdonorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\userdonorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\lumen-api\\controllers\\orgscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|solutionrelative:lumen-api\\controllers\\orgscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\interfaces\\iorgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\services\\orgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\services\\orgservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\infra\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|solutionrelative:infra\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\infra\\interfaces\\iorgrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F78E6240-17CF-4377-8BB2-95EFC9386D38}|Infra\\Infra.csproj|solutionrelative:infra\\interfaces\\iorgrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\reportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\reportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\services\\donationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\services\\donationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\domain\\entities\\donation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\donation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\donation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\desktop\\lumen-api\\domain\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\donordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\donordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\application\\dtos\\donorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{012DC476-BE85-4D9D-8166-BFC901E3C0A6}|Application\\Application.csproj|solutionrelative:application\\dtos\\donorcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\donor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\donor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\org.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\domain\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCF3D032-6069-4CD9-9DC8-EE31C013292C}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|c:\\users\\theo nicoleli\\documents\\github\\lumen-api\\lumen-api\\controllers\\donorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69255926-08D9-4D88-8801-D5CDCB935182}|Lumen-API\\Lumen-API.csproj|solutionrelative:lumen-api\\controllers\\donorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +142,436 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Application",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-03T13:41:28.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Program.cs",
+              "RelativeDocumentMoniker": "Lumen-API\\Program.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Program.cs",
+              "RelativeToolTip": "Lumen-API\\Program.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAH0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:28:34.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReportCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\ReportCreateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ReportCreateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\ReportCreateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ReportCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:12:34.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ReportService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\ReportService.cs",
+              "RelativeToolTip": "Application\\Services\\ReportService.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAcwB4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:05:55.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DonationService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\DonationService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\DonationService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\DonationService.cs",
+              "RelativeToolTip": "Application\\Services\\DonationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:05:48.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrgUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgUpdateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\OrgUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgUpdateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\OrgUpdateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:59:08.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OrgService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\OrgService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrgService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\OrgService.cs",
+              "RelativeToolTip": "Application\\Services\\OrgService.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAqwFEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:57:33.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IOrgService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Interfaces\\IOrgService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrgService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Interfaces\\IOrgService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrgService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:57:22.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserCreateOrUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserCreateOrUpdateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UserCreateOrUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserCreateOrUpdateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\UserCreateOrUpdateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:47:39.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReportDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\ReportDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ReportDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\ReportDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ReportDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:46:28.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Services\\UserService.cs",
+              "RelativeToolTip": "Application\\Services\\UserService.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAIAwwJ8AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T18:27:32.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "V1_CreateTables.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Migrations\\V1_CreateTables.cs",
+              "RelativeDocumentMoniker": "Infra\\Migrations\\V1_CreateTables.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Migrations\\V1_CreateTables.cs",
+              "RelativeToolTip": "Infra\\Migrations\\V1_CreateTables.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAowB4AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T18:30:36.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Lumen-API\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Lumen-API\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAA0wC8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:13:58.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserDonorCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserDonorCreateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UserDonorCreateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserDonorCreateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\UserDonorCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:20:46.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrgDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\OrgDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\OrgDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:46:16.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrgCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgCreateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\OrgCreateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\OrgCreateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\OrgCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:45:29.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DonationDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonationDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DonationDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonationDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DonationDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:45:16.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DonationCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonationCreateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DonationCreateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonationCreateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DonationCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:44:56.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IOrgRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Interfaces\\IOrgRepository.cs",
+              "RelativeDocumentMoniker": "Infra\\Interfaces\\IOrgRepository.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Interfaces\\IOrgRepository.cs",
+              "RelativeToolTip": "Infra\\Interfaces\\IOrgRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:13:13.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infra\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Infra\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Infra\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:13:19.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrgsController.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\OrgsController.cs",
+              "RelativeDocumentMoniker": "Lumen-API\\Controllers\\OrgsController.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\OrgsController.cs",
+              "RelativeToolTip": "Lumen-API\\Controllers\\OrgsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwC0AAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:25:43.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T13:27:42.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DonorDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonorDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DonorDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonorDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DonorDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:45:27.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DonorCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonorCreateDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DonorCreateDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\DonorCreateDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DonorCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:45:26.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Donor.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Donor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Donor.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Donor.cs",
+              "RelativeToolTip": "Domain\\Entities\\Donor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:27:08.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Org.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Org.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Org.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Org.cs",
+              "RelativeToolTip": "Domain\\Entities\\Org.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:27:03.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Report.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Report.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Report.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Report.cs",
+              "RelativeToolTip": "Domain\\Entities\\Report.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:27:02.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Application\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T18:30:15.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T18:22:41.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\LoginRequest.cs",
+              "RelativeToolTip": "Domain\\Entities\\LoginRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T12:27:07.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "DonorsController.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Lumen-API\\Controllers\\DonorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\DonorsController.cs",
               "RelativeDocumentMoniker": "Lumen-API\\Controllers\\DonorsController.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Lumen-API\\Controllers\\DonorsController.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Controllers\\DonorsController.cs",
               "RelativeToolTip": "Lumen-API\\Controllers\\DonorsController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAqwCgAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T18:36:43.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "V1_CreateTables.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Infra\\Migrations\\V1_CreateTables.cs",
-              "RelativeDocumentMoniker": "Infra\\Migrations\\V1_CreateTables.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Infra\\Migrations\\V1_CreateTables.cs",
-              "RelativeToolTip": "Infra\\Migrations\\V1_CreateTables.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:30:36.001Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Application\\DTOs\\UserDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\UserDto.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Application\\DTOs\\UserDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\UserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:30:15.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Application\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Application\\Services\\UserService.cs",
-              "RelativeToolTip": "Application\\Services\\UserService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAiwCEAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:27:32.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\User.cs",
-              "RelativeToolTip": "Domain\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:22:41.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 25,
               "Title": "Donation.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\Donation.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Donation.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Donation.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\Donation.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Donation.cs",
               "RelativeToolTip": "Domain\\Entities\\Donation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:21:34.006Z"
+              "WhenOpened": "2025-03-30T18:21:34.006Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 31,
               "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\Admin.cs",
+              "DocumentMoniker": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Admin.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Admin.cs",
-              "ToolTip": "C:\\Users\\Theo Nicoleli\\Desktop\\Lumen-API\\Domain\\Entities\\Admin.cs",
+              "ToolTip": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Domain\\Entities\\Admin.cs",
               "RelativeToolTip": "Domain\\Entities\\Admin.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:21:29.581Z"
+              "WhenOpened": "2025-03-30T18:21:29.581Z",
+              "EditorCaption": ""
             }
           ]
         }

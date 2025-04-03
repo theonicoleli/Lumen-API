@@ -7,7 +7,7 @@ namespace Application.Interfaces
         Task<IEnumerable<OrgDto>> GetAllOrgsAsync();
         Task<OrgDto> GetOrgByIdAsync(int id);
         Task<OrgDto> CreateOrgAsync(OrgCreateDto orgDto);
-        Task<OrgDto> UpdateOrgAsync(int id, OrgCreateDto orgDto);
+        Task<OrgDto> UpdateOrgAsync(int id, OrgUpdateDto orgDto);
         Task<bool> DeleteOrgAsync(int id);
     }
 }

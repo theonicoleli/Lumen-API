@@ -41,7 +41,7 @@ namespace Lumen_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<OrgDto>> UpdateOrg(int id, OrgCreateDto orgDto)
+        public async Task<ActionResult<OrgDto>> UpdateOrg(int id, OrgUpdateDto orgDto)
         {
             var updatedOrg = await _orgService.UpdateOrgAsync(id, orgDto);
             if (updatedOrg == null) return NotFound();
