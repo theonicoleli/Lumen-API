@@ -1,4 +1,5 @@
-﻿using Application.DTOs;
+﻿using BCrypt.Net;
+using Application.DTOs;
 using Application.Interfaces;
 using Domain.Entities;
 using Infra.Interfaces;
@@ -26,11 +27,11 @@ namespace Application.Services
             {
                 UserId = u.UserId,
                 UserEmail = u.UserEmail,
-                UserPassword = u.UserPassword,
                 UserStatus = u.UserStatus,
                 UserImageUrl = u.UserImageUrl,
                 DonorId = u.DonorId,
                 UserBirthDate = u.BirthDate,
+                UserDateCreated = u.UserDateCreated,
                 UserPhone = u.Phone
             });
         }
@@ -43,11 +44,11 @@ namespace Application.Services
             {
                 UserId = user.UserId,
                 UserEmail = user.UserEmail,
-                UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
                 DonorId = user.DonorId,
                 UserBirthDate = user.BirthDate,
+                UserDateCreated = user.UserDateCreated,
                 UserPhone = user.Phone
             };
         }
@@ -69,11 +70,12 @@ namespace Application.Services
             var user = new User
             {
                 UserEmail = userDto.UserEmail,
-                UserPassword = userDto.UserPassword,
+                UserPassword = BCrypt.Net.BCrypt.HashPassword(userDto.UserPassword),
                 UserStatus = userDto.UserStatus,
                 UserImageUrl = "",
                 DonorId = donor.DonorId,
                 BirthDate = userDto.UserBirthDate,
+                UserDateCreated = default,
                 Phone = userDto.UserPhone
             };
 
@@ -84,11 +86,11 @@ namespace Application.Services
             {
                 UserId = user.UserId,
                 UserEmail = user.UserEmail,
-                UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
                 DonorId = user.DonorId,
                 UserBirthDate = user.BirthDate,
+                UserDateCreated = user.UserDateCreated,
                 UserPhone = user.Phone
             };
         }
@@ -105,25 +107,19 @@ namespace Application.Services
             // }
 
             if (!string.IsNullOrWhiteSpace(dto.UserEmail))
-            {
                 user.UserEmail = dto.UserEmail;
-            }
+
             if (!string.IsNullOrWhiteSpace(dto.UserPassword))
-            {
-                user.UserPassword = dto.UserPassword;
-            }
+                user.UserPassword = BCrypt.Net.BCrypt.HashPassword(dto.UserPassword);
+
             if (!string.IsNullOrWhiteSpace(dto.UserStatus))
-            {
                 user.UserStatus = dto.UserStatus;
-            }
+
             if (dto.UserBirthDate != default(DateTime))
-            {
                 user.BirthDate = dto.UserBirthDate;
-            }
+
             if (!string.IsNullOrWhiteSpace(dto.UserPhone))
-            {
                 user.Phone = dto.UserPhone;
-            }
 
             await _userRepository.UpdateAsync(user);
             await _userRepository.SaveChangesAsync();
@@ -132,11 +128,11 @@ namespace Application.Services
             {
                 UserId = user.UserId,
                 UserEmail = user.UserEmail,
-                UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
                 DonorId = user.DonorId,
                 UserBirthDate = user.BirthDate,
+                UserDateCreated = user.UserDateCreated,
                 UserPhone = user.Phone
             };
         }
@@ -154,11 +150,12 @@ namespace Application.Services
             var user = new User
             {
                 UserEmail = dto.UserEmail,
-                UserPassword = dto.UserPassword,
+                UserPassword = BCrypt.Net.BCrypt.HashPassword(dto.UserPassword),
                 UserStatus = dto.UserStatus,
                 UserImageUrl = "",
                 DonorId = donor.DonorId,
                 BirthDate = dto.UserBirthDate,
+                UserDateCreated = default,
                 Phone = dto.UserPhone
             };
 
@@ -169,11 +166,11 @@ namespace Application.Services
             {
                 UserId = user.UserId,
                 UserEmail = user.UserEmail,
-                UserPassword = user.UserPassword,
                 UserStatus = user.UserStatus,
                 UserImageUrl = user.UserImageUrl,
                 DonorId = user.DonorId,
                 UserBirthDate = user.BirthDate,
+                UserDateCreated = user.UserDateCreated,
                 UserPhone = user.Phone
             };
         }
@@ -187,11 +184,11 @@ namespace Application.Services
 
         public async Task<UserDto> ValidateUserAsync(string email, string password)
         {
-            var user = await _userRepository.GetByEmailAndPasswordAsync(email, password);
-            if (user == null)
-            {
-                return null;
-            }
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user == null) return null;
+
+            var ok = BCrypt.Net.BCrypt.Verify(password, user.UserPassword);
+            if (!ok) return null;
 
             return new UserDto
             {

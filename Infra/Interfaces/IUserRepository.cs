@@ -10,6 +10,7 @@ namespace Infra.Interfaces
         Task UpdateAsync(User user);
         Task DeleteAsync(int id);
         Task SaveChangesAsync();
-        Task<User> GetByEmailAndPasswordAsync(string email, string password);
+        Task<User?> GetByEmailAndPasswordAsync(string email, string password);
+        Task<User?> GetByEmailAsync(string email);
     }
 }

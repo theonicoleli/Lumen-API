@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -11,12 +10,30 @@ namespace Converters
 
         public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string dateString = reader.GetString();
-            if (DateTime.TryParseExact(dateString, DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+            if (reader.TokenType == JsonTokenType.String)
             {
-                return date;
+                string value = reader.GetString()!;
+
+                if (DateTime.TryParseExact(
+                        value,
+                        DateFormat,
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out var date))
+                    return date;
+
+                if (DateTime.TryParse(
+                        value,
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal,
+                        out date))
+                    return date;
             }
-            throw new JsonException($"Não foi possível converter \"{dateString}\" para DateTime com o formato {DateFormat}.");
+
+            if (reader.TokenType == JsonTokenType.StartObject || reader.TokenType == JsonTokenType.Number)
+                return reader.GetDateTime();
+
+            throw new JsonException($"Valor de data/hora inválido ou em formato não suportado.");
         }
 
         public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)

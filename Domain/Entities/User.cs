@@ -9,6 +9,7 @@
         public string UserImageUrl { get; set; } = string.Empty;
         public int DonorId { get; set; }
         public DateTime BirthDate { get; set; }
+        public DateTime UserDateCreated { get; set; }
         public string Phone { get; set; } = string.Empty;
     }
 }

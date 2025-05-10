@@ -23,6 +23,7 @@ namespace Application.Services
                 OrgWebsiteUrl = o.OrgWebsiteUrl,
                 OrgLocation = o.OrgLocation,
                 OrgFoundationDate = o.OrgFoundationDate,
+                OrgDateCreated = o.OrgDateCreated,
                 AdminName = o.AdminName,
                 AdminPhone = o.AdminPhone
             });
@@ -39,6 +40,7 @@ namespace Application.Services
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
                 OrgFoundationDate = org.OrgFoundationDate,
+                OrgDateCreated = org.OrgDateCreated,
                 AdminName = org.AdminName,
                 AdminPhone = org.AdminPhone
             };
@@ -52,6 +54,7 @@ namespace Application.Services
                 OrgWebsiteUrl = createDto.OrgWebsiteUrl,
                 OrgLocation = createDto.OrgLocation,
                 OrgFoundationDate = createDto.OrgFoundationDate,
+                OrgDateCreated = default,
                 AdminName = createDto.AdminName,
                 AdminPhone = createDto.AdminPhone
             };
@@ -66,6 +69,7 @@ namespace Application.Services
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
                 OrgFoundationDate = org.OrgFoundationDate,
+                OrgDateCreated = org.OrgDateCreated,
                 AdminName = org.AdminName,
                 AdminPhone = org.AdminPhone
             };
@@ -90,6 +94,7 @@ namespace Application.Services
                 OrgWebsiteUrl = org.OrgWebsiteUrl,
                 OrgLocation = org.OrgLocation,
                 OrgFoundationDate = org.OrgFoundationDate,
+                OrgDateCreated = org.OrgDateCreated,
                 AdminName = org.AdminName,
                 AdminPhone = org.AdminPhone
             };

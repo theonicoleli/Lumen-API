@@ -36,11 +36,13 @@ namespace Infra.Repositories
         public async Task SaveChangesAsync() =>
             await _context.SaveChangesAsync();
 
-        public async Task<User> GetByEmailAndPasswordAsync(string email, string password)
-        {
-            return await _context.Users
+        public async Task<User?> GetByEmailAndPasswordAsync(string email, string password) =>
+            await _context.Users
                 .FirstOrDefaultAsync(u => u.UserEmail == email && u.UserPassword == password);
-        }
+
+        public async Task<User?> GetByEmailAsync(string email) =>
+            await _context.Users
+                          .FirstOrDefaultAsync(u => u.UserEmail == email);
     }
 
 }

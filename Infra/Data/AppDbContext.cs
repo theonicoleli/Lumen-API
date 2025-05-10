@@ -30,6 +30,36 @@ namespace Infra.Data
                 .HasMany(o => o.Donations)
                 .WithOne(dn => dn.Org)
                 .HasForeignKey(dn => dn.OrgId);
+
+            modelBuilder.Entity<Domain.Entities.Org>(entity =>
+            {
+                entity.Property(o => o.OrgDateCreated)
+                  .HasColumnType("timestamp")
+                  .HasDefaultValueSql("UTC_TIMESTAMP()")
+                  .ValueGeneratedOnAdd();
+
+                entity.Property(o => o.OrgFoundationDate)
+                      .HasColumnType("date");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasIndex(u => u.UserEmail)
+                      .IsUnique();
+
+                entity.Property(u => u.UserPassword)
+                      .HasColumnType("char(60)")
+                      .IsRequired();
+
+                entity.Property(u => u.UserDateCreated)
+                      .HasColumnType("timestamp")
+                      .HasDefaultValueSql("UTC_TIMESTAMP()")
+                      .ValueGeneratedOnAdd();
+
+                entity.Property(u => u.BirthDate)
+                      .HasColumnType("date");
+            });
+
         }
     }
 }
