@@ -53,6 +53,23 @@ namespace Application.Services
             };
         }
 
+        public async Task<UserDto> GetUserByEmailAsync(string email)
+        {
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user == null) return null;
+            return new UserDto
+            {
+                UserId = user.UserId,
+                UserEmail = user.UserEmail,
+                UserStatus = user.UserStatus,
+                UserImageUrl = user.UserImageUrl,
+                DonorId = user.DonorId,
+                UserBirthDate = user.BirthDate,
+                UserDateCreated = user.UserDateCreated,
+                UserPhone = user.Phone
+            };
+        }
+
         public async Task<UserDto> CreateUserAsync(UserCreateOrUpdateDto userDto)
         {
             // Caso exista upload de imagem, pode ser descomentado:

@@ -3,6 +3,7 @@ using Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Lumen_API.Controllers
@@ -31,6 +32,16 @@ namespace Lumen_API.Controllers
             var donation = await _donationService.GetDonationByIdAsync(id);
             if (donation == null) return NotFound();
             return Ok(donation);
+        }
+
+        [HttpGet("donors/{donorId}")]
+        public async Task<IActionResult> GetByDonor(int donorId)
+        {
+            var list = await _donationService.GetDonationsByDonorAsync(donorId);
+            if (!list.Any())
+                return NotFound($"Não há doações para o donorId {donorId}.");
+
+            return Ok(list);
         }
 
         [HttpPost]

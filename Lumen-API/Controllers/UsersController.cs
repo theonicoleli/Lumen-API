@@ -34,6 +34,14 @@ namespace Lumen_API.Controllers
             return Ok(user);
         }
 
+        [HttpGet("{email}")]
+        public async Task<ActionResult<UserDto>> GetUserByEmail(string email)
+        {
+            var user = await _userService.GetUserByEmailAsync(email);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<UserDto>> CreateUser([FromForm] UserCreateOrUpdateDto dto)

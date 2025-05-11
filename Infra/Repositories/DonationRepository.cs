@@ -34,6 +34,14 @@ namespace Infra.Repositories
                 _context.Donations.Remove(donation);
         }
 
+        public async Task<IEnumerable<Donation>> GetByDonorIdAsync(int donorId)
+        {
+            return await _context.Donations
+                .Include(d => d.Donor)
+                .Where(d => d.DonorId == donorId)
+                .ToListAsync();
+        }
+
         public async Task SaveChangesAsync() =>
             await _context.SaveChangesAsync();
     }

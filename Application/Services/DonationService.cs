@@ -8,10 +8,14 @@ namespace Application.Services
     public class DonationService : IDonationService
     {
         private readonly IDonationRepository _donationRepository;
+        private readonly IDonorRepository _donorRepository;
+        private readonly IOrgRepository _orgRepository;
 
-        public DonationService(IDonationRepository donationRepository)
+        public DonationService(IDonationRepository donationRepository, IDonorRepository donorRepository, IOrgRepository orgRepository)
         {
             _donationRepository = donationRepository;
+            _donorRepository = donorRepository;
+            _orgRepository = orgRepository;
         }
 
         public async Task<IEnumerable<DonationDto>> GetAllDonationsAsync()
@@ -49,18 +53,26 @@ namespace Application.Services
             };
         }
 
-        public async Task<DonationDto> CreateDonationAsync(DonationCreateDto donationDto)
+        public async Task<DonationDto> CreateDonationAsync(DonationCreateDto dto)
         {
+            var donor = await _donorRepository.GetByIdAsync(dto.DonorId);
+            if (donor == null)
+                throw new KeyNotFoundException($"Donor {dto.DonorId} não encontrado.");
+
+            var org = await _orgRepository.GetByIdAsync(dto.OrgId);
+            if (org == null)
+                throw new KeyNotFoundException($"Org {dto.OrgId} não encontrada.");
+
             var donation = new Donation
             {
-                DonationMethod = donationDto.DonationMethod,
-                DonationDate = donationDto.DonationDate,
-                DonationAmount = donationDto.DonationAmount,
-                DonationStatus = donationDto.DonationStatus,
-                DonationIsAnonymous = donationDto.DonationIsAnonymous,
-                DonationDonorMessage = donationDto.DonationDonorMessage,
-                DonorId = donationDto.DonorId,
-                OrgId = donationDto.OrgId
+                DonationMethod = dto.DonationMethod,
+                DonationDate = dto.DonationDate,
+                DonationAmount = dto.DonationAmount,
+                DonationStatus = dto.DonationStatus,
+                DonationIsAnonymous = dto.DonationIsAnonymous,
+                DonationDonorMessage = dto.DonationDonorMessage,
+                DonorId = dto.DonorId,
+                OrgId = dto.OrgId
             };
 
             await _donationRepository.AddAsync(donation);
@@ -109,6 +121,26 @@ namespace Application.Services
                 DonorId = donation.DonorId,
                 OrgId = donation.OrgId
             };
+        }
+
+        public async Task<IEnumerable<DonationWithDonorDto>> GetDonationsByDonorAsync(int donorId)
+        {
+            var donations = await _donationRepository.GetByDonorIdAsync(donorId);
+
+            return donations.Select(d => new DonationWithDonorDto
+            {
+                DonationId = d.DonationId,
+                DonationMethod = d.DonationMethod,
+                DonationDate = d.DonationDate,
+                DonationAmount = d.DonationAmount,
+                DonationStatus = d.DonationStatus,
+                DonationIsAnonymous = d.DonationIsAnonymous,
+                DonationDonorMessage = d.DonationDonorMessage,
+
+                DonorId = d.Donor.DonorId,
+                DonorDocument = d.Donor.DonorDocument,
+                DonorLocation = d.Donor.DonorLocation
+            });
         }
 
         public async Task<bool> DeleteDonationAsync(int id)
