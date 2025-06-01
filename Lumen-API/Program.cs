@@ -9,7 +9,6 @@ using Application.Services;
 using Infra.Data;
 using Infra.Interfaces;
 using Infra.Repositories;
-using Infra.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +16,8 @@ using System;
 using Infra.Migrations;
 using Converters;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,20 +33,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 21))
     )
 );
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDonorRepository, DonorRepository>();
 builder.Services.AddScoped<IOrgRepository, OrgRepository>();
 builder.Services.AddScoped<IDonationRepository, DonationRepository>();
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
+builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IDonorService, DonorService>();
 builder.Services.AddScoped<IOrgService, OrgService>();
 builder.Services.AddScoped<IDonationService, DonationService>();
 builder.Services.AddScoped<IReportService, ReportService>();
-
-builder.Services.AddScoped<IFirebaseStorageService, FirebaseStorageService>();
+builder.Services.AddScoped<ILocalFileStorageService, LocalFileStorageService>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings.GetValue<string>("SecretKey");
@@ -114,6 +117,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var configuredStoragePath = builder.Configuration.GetValue<string>("FileStorageSettings:LocalPath") ?? "Uploads/Images";
+var physicalUploadsPath = Path.Combine(builder.Environment.ContentRootPath, configuredStoragePath);
+
+if (!Directory.Exists(physicalUploadsPath))
+    Directory.CreateDirectory(physicalUploadsPath);
+
+var publicBaseUrl = builder.Configuration.GetValue<string>("FileStorageSettings:PublicBaseUrlPath") ?? "/static-images";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(physicalUploadsPath),
+    RequestPath = publicBaseUrl
+});
 
 app.UseHttpsRedirection();
 

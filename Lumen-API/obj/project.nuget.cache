@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fF8aotLWJ9Q=",
+  "dgSpecHash": "tZjNz1qV8gA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Theo Nicoleli\\Documents\\GitHub\\Lumen-API\\Lumen-API\\Lumen-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\firebasestorage.net\\1.0.3\\firebasestorage.net.1.0.3.nupkg.sha512",
     "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\firebirdsql.data.firebirdclient\\10.3.2\\firebirdsql.data.firebirdclient.10.3.2.nupkg.sha512",
     "C:\\Users\\Theo Nicoleli\\.nuget\\packages\\fluentmigrator\\7.1.0\\fluentmigrator.7.1.0.nupkg.sha512",

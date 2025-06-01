@@ -35,5 +35,12 @@ namespace Infra.Repositories
 
         public async Task SaveChangesAsync() =>
             await _context.SaveChangesAsync();
+
+        public async Task<Donor?> GetByUserIdAsync(int userId)
+        {
+            return await _context.Donors
+                                 .Include(d => d.User)
+                                 .FirstOrDefaultAsync(d => d.UserId == userId);
+        }
     }
 }

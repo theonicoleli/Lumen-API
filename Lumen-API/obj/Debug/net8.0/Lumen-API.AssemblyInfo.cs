@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lumen-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e50e7236ab54d47356d11a2c43b1b2bd5b113f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f74015bbe1337eec3e3f048da8b0b078833abba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lumen-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lumen-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

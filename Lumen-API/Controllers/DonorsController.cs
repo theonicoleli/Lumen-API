@@ -3,57 +3,60 @@ using Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Domain.Entities.Enums;
 
 namespace Lumen_API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/donors")]
     public class DonorsController : ControllerBase
     {
         private readonly IDonorService _donorService;
-        public DonorsController(IDonorService donorService)
+        private readonly IUserService _userService;
+
+        public DonorsController(IDonorService donorService, IUserService userService)
         {
             _donorService = donorService;
+            _userService = userService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DonorDto>>> GetAllDonors()
+        [Authorize(Roles = nameof(UserRole.Admin))]
+        public async Task<ActionResult<IEnumerable<DonorProfileDto>>> GetAllDonorProfiles()
         {
-            var donors = await _donorService.GetAllDonorsAsync();
-            return Ok(donors);
+            var donorProfiles = await _donorService.GetAllDonorsAsync();
+            return Ok(donorProfiles);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<DonorDto>> GetDonorById(int id)
+        [HttpGet("{userId}")]
+        public async Task<ActionResult<DonorProfileDto>> GetDonorProfileByUserId(int userId)
         {
-            var donor = await _donorService.GetDonorByIdAsync(id);
-            if (donor == null) return NotFound();
-            return Ok(donor);
-        }
+            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var currentUserRole = User.FindFirstValue(ClaimTypes.Role);
 
-        [HttpPost]
-        public async Task<ActionResult<DonorDto>> CreateDonor(DonorCreateDto donorDto)
-        {
-            var createdDonor = await _donorService.CreateDonorAsync(donorDto);
-            return CreatedAtAction(nameof(GetDonorById), new { id = createdDonor.DonorId }, createdDonor);
-        }
+            if (string.IsNullOrEmpty(currentUserIdString) ||
+                (currentUserIdString != userId.ToString() && currentUserRole != UserRole.Admin.ToString()))
+            {
+                return Forbid();
+            }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<DonorDto>> UpdateDonor(int id, DonorCreateDto donorDto)
-        {
-            var updatedDonor = await _donorService.UpdateDonorAsync(id, donorDto);
-            if (updatedDonor == null) return NotFound();
-            return Ok(updatedDonor);
-        }
+            var donorProfile = await _donorService.GetDonorByUserIdAsync(userId);
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDonor(int id)
-        {
-            var success = await _donorService.DeleteDonorAsync(id);
-            if (!success) return NotFound();
-            return NoContent();
+            if (donorProfile == null)
+            {
+                var userCheck = await _userService.GetUserByIdAsync(userId);
+                if (userCheck == null)
+                    return NotFound($"Usuário com ID {userId} não encontrado.");
+
+                if (userCheck.Role != UserRole.Donor || userCheck.DonorProfile == null)
+                    return NotFound($"Usuário com ID {userId} não possui um perfil de doador ativo.");
+
+                return NotFound($"Perfil de doador para o usuário com ID {userId} não encontrado.");
+            }
+            return Ok(donorProfile);
         }
     }
 }

@@ -3,57 +3,61 @@ using Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Domain.Entities.Enums;
 
 namespace Lumen_API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/orgs")]
     public class OrgsController : ControllerBase
     {
         private readonly IOrgService _orgService;
-        public OrgsController(IOrgService orgService)
+        private readonly IUserService _userService;
+
+        public OrgsController(IOrgService orgService, IUserService userService)
         {
             _orgService = orgService;
+            _userService = userService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrgDto>>> GetAllOrgs()
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<OrgProfileDto>>> GetAllOrgProfiles()
         {
-            var orgs = await _orgService.GetAllOrgsAsync();
-            return Ok(orgs);
+            var orgProfiles = await _orgService.GetAllOrgsAsync();
+            return Ok(orgProfiles);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<OrgDto>> GetOrgById(int id)
+        [HttpGet("{userId}")]
+        public async Task<ActionResult<OrgProfileDto>> GetOrgProfileByUserId(int userId)
         {
-            var org = await _orgService.GetOrgByIdAsync(id);
-            if (org == null) return NotFound();
-            return Ok(org);
+            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var currentUserRole = User.FindFirstValue(ClaimTypes.Role);
+
+            if (string.IsNullOrEmpty(currentUserIdString) ||
+                (currentUserIdString != userId.ToString() && currentUserRole != UserRole.Admin.ToString()))
+            {
+                return Forbid();
+            }
+
+            var orgProfile = await _orgService.GetOrgByUserIdAsync(userId);
+
+            if (orgProfile == null)
+            {
+                var userCheck = await _userService.GetUserByIdAsync(userId);
+                if (userCheck == null)
+                    return NotFound($"Usuário com ID {userId} não encontrado.");
+
+                if (userCheck.Role != UserRole.Org || userCheck.OrgProfile == null)
+                    return NotFound($"Usuário com ID {userId} não possui um perfil de organização ativo.");
+
+                return NotFound($"Perfil de organização para o usuário com ID {userId} não encontrado.");
+            }
+            return Ok(orgProfile);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<OrgDto>> CreateOrg(OrgCreateDto orgDto)
-        {
-            var createdOrg = await _orgService.CreateOrgAsync(orgDto);
-            return CreatedAtAction(nameof(GetOrgById), new { id = createdOrg.OrgId }, createdOrg);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<OrgDto>> UpdateOrg(int id, OrgUpdateDto orgDto)
-        {
-            var updatedOrg = await _orgService.UpdateOrgAsync(id, orgDto);
-            if (updatedOrg == null) return NotFound();
-            return Ok(updatedOrg);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrg(int id)
-        {
-            var success = await _orgService.DeleteOrgAsync(id);
-            if (!success) return NotFound();
-            return NoContent();
-        }
     }
 }

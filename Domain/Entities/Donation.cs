@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using Domain.Entities.Enums;
+
+namespace Domain.Entities
 {
     public class Donation
     {
@@ -6,12 +8,12 @@
         public string DonationMethod { get; set; } = string.Empty;
         public DateTime DonationDate { get; set; }
         public decimal DonationAmount { get; set; }
-        public string DonationStatus { get; set; } = string.Empty;
-        public bool DonationIsAnonymous { get; set; }
+        public DonationStatusEnum Status { get; set; }
         public string DonationDonorMessage { get; set; } = string.Empty;
+        public bool DonationIsAnonymous { get; set; }
         public int DonorId { get; set; }
-        public Donor Donor { get; set; } = null!;
+        public virtual Donor Donor { get; set; } = null!;
         public int OrgId { get; set; }
-        public Org Org { get; set; } = null!;
+        public virtual Org Org { get; set; } = null!;
     }
 }

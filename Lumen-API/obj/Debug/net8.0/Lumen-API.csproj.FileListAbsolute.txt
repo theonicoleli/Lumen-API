@@ -548,3 +548,4 @@ C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Lumen-API\obj\Debug\net8.0\sco
 C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Lumen-API\obj\Debug\net8.0\Lumen-API.csproj.Up2Date
 C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Lumen-API\obj\Debug\net8.0\Lumen-API.genruntimeconfig.cache
 C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Lumen-API\obj\Debug\net8.0\ref\Lumen-API.dll
+C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Lumen-API\bin\Debug\net8.0\BCrypt.Net-Next.dll
