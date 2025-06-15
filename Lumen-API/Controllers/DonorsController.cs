@@ -23,6 +23,13 @@ namespace Lumen_API.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// Retorna todos os perfis de doadores cadastrados.
+        /// </summary>
+        /// <remarks>Requer permissão de administrador.</remarks>
+        /// <returns>Lista de perfis de doadores.</returns>
+        /// <response code="200">Lista retornada com sucesso.</response>
+        /// <response code="403">Acesso negado para usuários não administradores.</response>
         [HttpGet]
         [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<ActionResult<IEnumerable<DonorProfileDto>>> GetAllDonorProfiles()
@@ -31,6 +38,14 @@ namespace Lumen_API.Controllers
             return Ok(donorProfiles);
         }
 
+        /// <summary>
+        /// Retorna o perfil de doador associado a um usuário específico.
+        /// </summary>
+        /// <param name="userId">ID do usuário a ser consultado.</param>
+        /// <returns>Perfil de doador vinculado ao usuário.</returns>
+        /// <response code="200">Perfil encontrado com sucesso.</response>
+        /// <response code="403">Usuário autenticado não tem permissão para acessar o perfil de outro usuário.</response>
+        /// <response code="404">Usuário ou perfil de doador não encontrado.</response>
         [HttpGet("{userId}")]
         public async Task<ActionResult<DonorProfileDto>> GetDonorProfileByUserId(int userId)
         {
