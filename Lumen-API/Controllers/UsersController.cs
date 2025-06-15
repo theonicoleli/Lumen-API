@@ -117,7 +117,7 @@ namespace Lumen_API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = nameof(UserRole.Admin))]
+        [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.Donor)},{nameof(UserRole.Org)}")]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();

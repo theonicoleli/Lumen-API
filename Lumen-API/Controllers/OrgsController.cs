@@ -34,14 +34,14 @@ namespace Lumen_API.Controllers
         [HttpGet("{userId}")]
         public async Task<ActionResult<OrgProfileDto>> GetOrgProfileByUserId(int userId)
         {
-            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var currentUserRole = User.FindFirstValue(ClaimTypes.Role);
-
-            if (string.IsNullOrEmpty(currentUserIdString) ||
-                (currentUserIdString != userId.ToString() && currentUserRole != UserRole.Admin.ToString()))
-            {
-                return Forbid();
-            }
+            // var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            // var currentUserRole = User.FindFirstValue(ClaimTypes.Role);
+            //
+            // if (string.IsNullOrEmpty(currentUserIdString) ||
+            //     (currentUserIdString != userId.ToString() && currentUserRole != UserRole.Admin.ToString()))
+            // {
+            //     return Forbid();
+            // }
 
             var orgProfile = await _orgService.GetOrgByUserIdAsync(userId);
 

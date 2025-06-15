@@ -1,43 +1,58 @@
-C:\Users\Theo Nicoleli\source\repos\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\Theo Nicoleli\source\repos\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\Theo Nicoleli\source\repos\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\source\repos\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\Theo Nicoleli\source\repos\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\Theo Nicoleli\Desktop\Lumen-API\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
-C:\Users\Theo Nicoleli\Documents\GitHub\Lumen-API\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:/Users/Theo Nicoleli/source/repos/Domain/bin/Debug/net8.0/Domain.deps.json
+C:/Users/Theo Nicoleli/source/repos/Domain/bin/Debug/net8.0/Domain.runtimeconfig.json
+C:/Users/Theo Nicoleli/source/repos/Domain/bin/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/source/repos/Domain/bin/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/refint/Domain.dll
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/Domain.genruntimeconfig.cache
+C:/Users/Theo Nicoleli/source/repos/Domain/obj/Debug/net8.0/ref/Domain.dll
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/bin/Debug/net8.0/Domain.deps.json
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/bin/Debug/net8.0/Domain.runtimeconfig.json
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/bin/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/bin/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/refint/Domain.dll
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/Domain.genruntimeconfig.cache
+C:/Users/Theo Nicoleli/Desktop/Lumen-API/Domain/obj/Debug/net8.0/ref/Domain.dll
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/bin/Debug/net8.0/Domain.deps.json
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/bin/Debug/net8.0/Domain.runtimeconfig.json
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/bin/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/bin/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.sourcelink.json
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.dll
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/refint/Domain.dll
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.pdb
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/Domain.genruntimeconfig.cache
+C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Domain/obj/Debug/net8.0/ref/Domain.dll
+/Users/bptiago/Projects/Lumen-API/Domain/bin/Debug/net8.0/Domain.deps.json
+/Users/bptiago/Projects/Lumen-API/Domain/bin/Debug/net8.0/Domain.runtimeconfig.json
+/Users/bptiago/Projects/Lumen-API/Domain/bin/Debug/net8.0/Domain.dll
+/Users/bptiago/Projects/Lumen-API/Domain/bin/Debug/net8.0/Domain.pdb
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.dll
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/refint/Domain.dll
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.pdb
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/Domain.genruntimeconfig.cache
+/Users/bptiago/Projects/Lumen-API/Domain/obj/Debug/net8.0/ref/Domain.dll
