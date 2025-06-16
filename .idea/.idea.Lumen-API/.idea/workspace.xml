@@ -10,31 +10,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9163cb4d-89e9-49b6-8deb-b620baab8f2c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lumen-API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lumen-API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/DTOs/DonationWithDonorDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DTOs/DonationWithDonorDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DonationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DonationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/ref/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/refint/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lumen-API/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Lumen-API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/Lumen-API.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/ref/Lumen-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/ref/Lumen-API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/refint/Lumen-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Debug/net8.0/refint/Lumen-API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Lumen-API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Lumen-API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/Lumen-API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/Lumen-API.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lumen-API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Lumen-API/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +146,7 @@
       <updated>1749911303882</updated>
       <workItem from="1749911305262" duration="807000" />
       <workItem from="1749918701353" duration="4051000" />
-      <workItem from="1750012416196" duration="14367000" />
+      <workItem from="1750012416196" duration="14812000" />
     </task>
     <servers />
   </component>

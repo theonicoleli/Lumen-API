@@ -735,3 +735,5 @@ C:/Users/Theo Nicoleli/Documents/GitHub/Lumen-API/Lumen-API/bin/Debug/net8.0/BCr
 /Users/bptiago/Projects/Lumen-API/Lumen-API/obj/Debug/net8.0/Lumen-API.pdb
 /Users/bptiago/Projects/Lumen-API/Lumen-API/obj/Debug/net8.0/Lumen-API.genruntimeconfig.cache
 /Users/bptiago/Projects/Lumen-API/Lumen-API/obj/Debug/net8.0/ref/Lumen-API.dll
+/Users/bptiago/Projects/Lumen-API/Lumen-API/bin/Debug/net8.0/Lumen-API.xml
+/Users/bptiago/Projects/Lumen-API/Lumen-API/obj/Debug/net8.0/Lumen-API.xml
