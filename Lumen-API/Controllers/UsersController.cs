@@ -22,6 +22,15 @@ namespace Lumen_API.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// Registra um novo usuário com papel de administrador.
+        /// </summary>
+        /// <param name="dto">Objeto contendo os dados do usuário administrador.</param>
+        /// <returns>O usuário criado, com ID e informações cadastradas.</returns>
+        /// <response code="201">Usuário criado com sucesso.</response>
+        /// <response code="400">Erro de validação ou papel inválido.</response>
+        /// <response code="409">Usuário já existente.</response>
+        /// <response code="500">Erro interno do servidor.</response>
         [AllowAnonymous]
         [HttpPost("register/admin")]
         public async Task<ActionResult<UserDto>> RegisterAdmin([FromBody] UserCreateDto dto)
@@ -45,6 +54,16 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Registra um novo usuário com perfil de doador.
+        /// </summary>
+        /// <param name="dto">Dados do doador, como nome, e-mail, senha etc.</param>
+        /// <param name="imageFile">Imagem de perfil opcional (formato multipart/form-data).</param>
+        /// <returns>Dados do usuário criado.</returns>
+        /// <response code="201">Usuário criado com sucesso.</response>
+        /// <response code="400">Erro de validação nos dados.</response>
+        /// <response code="409">Conflito: e-mail ou outro campo já cadastrado.</response>
+        /// <response code="500">Erro interno ao processar a solicitação.</response>
         [AllowAnonymous]
         [HttpPost("register/donor")]
         public async Task<ActionResult<UserDto>> RegisterDonor([FromForm] UserDonorCreateDto dto, IFormFile? imageFile)
@@ -65,6 +84,12 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Registra um novo usuário com perfil de organização.
+        /// </summary>
+        /// <param name="dto">Dados da organização, como nome fantasia, CNPJ, descrição etc.</param>
+        /// <param name="imageFile">Imagem de perfil opcional da organização.</param>
+        /// <returns>Dados da organização criada.</returns>
         [AllowAnonymous]
         [HttpPost("register/org")]
         public async Task<ActionResult<UserDto>> RegisterOrg([FromForm] UserOrgCreateDto dto, IFormFile? imageFile)
@@ -85,6 +110,11 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna os dados de um usuário a partir do ID.
+        /// </summary>
+        /// <param name="id">ID do usuário a ser consultado.</param>
+        /// <returns>Objeto com as informações do usuário.</returns>
         [HttpGet("{id}")]
         [Authorize]
         public async Task<ActionResult<UserDto>> GetUserById(int id)
@@ -97,6 +127,11 @@ namespace Lumen_API.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Busca um usuário pelo e-mail (somente administradores).
+        /// </summary>
+        /// <param name="email">E-mail do usuário.</param>
+        /// <returns>Informações completas do usuário.</returns>
         [HttpGet("byemail/{email}")]
         [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<ActionResult<UserDto>> GetUserByEmail(string email)
@@ -109,6 +144,10 @@ namespace Lumen_API.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Lista todos os usuários cadastrados no sistema.
+        /// </summary>
+        /// <returns>Lista de usuários.</returns>
         [HttpGet]
         [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.Donor)},{nameof(UserRole.Org)}")]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAllUsers()
@@ -117,6 +156,12 @@ namespace Lumen_API.Controllers
             return Ok(users);
         }
 
+        /// <summary>
+        /// Atualiza informações básicas (core) de um usuário.
+        /// </summary>
+        /// <param name="userId">ID do usuário a ser atualizado.</param>
+        /// <param name="dto">Dados atualizados do usuário.</param>
+        /// <returns>Usuário atualizado.</returns>
         [HttpPut("{userId}/core")]
         [Authorize]
         public async Task<ActionResult<UserDto>> UpdateUserCore(int userId, [FromBody] UserUpdateDto dto)
@@ -140,6 +185,13 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza ou cria o perfil de doador para um usuário existente.
+        /// </summary>
+        /// <param name="userId">ID do usuário.</param>
+        /// <param name="dto">Informações do perfil de doador.</param>
+        /// <param name="imageFile">Imagem de perfil opcional.</param>
+        /// <returns>Perfil de doador atualizado.</returns>
         [HttpPut("{userId}/profile/donor")]
         [Authorize]
         public async Task<ActionResult<DonorProfileDto>> UpdateDonorProfile(int userId, [FromForm] DonorProfileUpdateDto dto, IFormFile? imageFile)
@@ -163,6 +215,13 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza ou cria o perfil de organização para um usuário existente.
+        /// </summary>
+        /// <param name="userId">ID do usuário.</param>
+        /// <param name="dto">Informações do perfil da organização.</param>
+        /// <param name="imageFile">Imagem de perfil opcional.</param>
+        /// <returns>Perfil de organização atualizado.</returns>
         [HttpPut("{userId}/profile/org")]
         [Authorize]
         public async Task<ActionResult<OrgProfileDto>> UpdateOrgProfile(int userId, [FromForm] OrgProfileUpdateDto dto, IFormFile? imageFile)
@@ -186,6 +245,11 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Exclui um usuário do sistema (somente administradores).
+        /// </summary>
+        /// <param name="id">ID do usuário a ser removido.</param>
+        /// <returns>Sem conteúdo se a exclusão for bem-sucedida.</returns>
         [HttpDelete("{id}")]
         [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> DeleteUser(int id)

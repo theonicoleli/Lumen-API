@@ -23,6 +23,12 @@ namespace Lumen_API.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// Retorna todos os perfis de organizações cadastradas.
+        /// </summary>
+        /// <remarks>Este endpoint é público e não exige autenticação.</remarks>
+        /// <returns>Lista de perfis de organizações.</returns>
+        /// <response code="200">Lista de organizações retornada com sucesso.</response>
         [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<OrgProfileDto>>> GetAllOrgProfiles()
@@ -31,6 +37,13 @@ namespace Lumen_API.Controllers
             return Ok(orgProfiles);
         }
 
+        /// <summary>
+        /// Retorna o perfil de organização associado a um usuário específico.
+        /// </summary>
+        /// <param name="userId">ID do usuário a ser consultado.</param>
+        /// <returns>Perfil da organização vinculada ao usuário.</returns>
+        /// <response code="200">Perfil encontrado com sucesso.</response>
+        /// <response code="404">Usuário não encontrado ou não possui perfil de organização.</response>
         [HttpGet("{userId}")]
         public async Task<ActionResult<OrgProfileDto>> GetOrgProfileByUserId(int userId)
         {

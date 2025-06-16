@@ -18,8 +18,27 @@ using Converters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using Microsoft.OpenApi.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Lumen API",
+        Version = "v1",
+        Description = "Documentação da API com exemplos de payloads reais."
+    });
+
+    // Para incluir comentários XML dos controllers
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+});
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -142,6 +161,16 @@ app.UseStaticFiles(new StaticFileOptions
     FileProvider = new PhysicalFileProvider(physicalUploadsPath),
     RequestPath = publicBaseUrl
 });
+
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lumen API v1");
+    });
+}
 
 app.UseHttpsRedirection();
 

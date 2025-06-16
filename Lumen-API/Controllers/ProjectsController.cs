@@ -20,6 +20,11 @@ namespace Lumen_API.Controllers
             _projectService = projectService;
         }
 
+        /// <summary>
+        /// Retorna todos os projetos cadastrados no sistema.
+        /// </summary>
+        /// <returns>Lista de projetos.</returns>
+        /// <response code="200">Lista retornada com sucesso.</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProjectDto>>> GetAllProjects()
         {
@@ -27,6 +32,13 @@ namespace Lumen_API.Controllers
             return Ok(projects);
         }
 
+        /// <summary>
+        /// Retorna os detalhes de um projeto específico pelo ID.
+        /// </summary>
+        /// <param name="id">ID do projeto.</param>
+        /// <returns>Objeto contendo os dados do projeto.</returns>
+        /// <response code="200">Projeto encontrado.</response>
+        /// <response code="404">Projeto não encontrado.</response>
         [HttpGet("{id}")]
         public async Task<ActionResult<ProjectDto>> GetProjectById(int id)
         {
@@ -38,6 +50,13 @@ namespace Lumen_API.Controllers
             return Ok(project);
         }
 
+        /// <summary>
+        /// Retorna todos os projetos vinculados a uma organização específica.
+        /// </summary>
+        /// <param name="orgId">ID da organização.</param>
+        /// <returns>Lista de projetos associados.</returns>
+        /// <response code="200">Lista de projetos retornada com sucesso.</response>
+        /// <response code="404">Nenhum projeto encontrado para a organização.</response>
         [HttpGet("org/{orgId}")]
         public async Task<ActionResult<IEnumerable<ProjectDto>>> GetProjectsByOrgId(int orgId)
         {
@@ -49,6 +68,14 @@ namespace Lumen_API.Controllers
             return Ok(projects);
         }
 
+        /// <summary>
+        /// Cria um novo projeto.
+        /// </summary>
+        /// <param name="projectDto">Dados do projeto a ser criado.</param>
+        /// <returns>Projeto criado com sucesso.</returns>
+        /// <response code="201">Projeto criado.</response>
+        /// <response code="400">Erro de validação nos dados enviados.</response>
+        /// <response code="404">Entidade relacionada não encontrada (ex: ONG inexistente).</response>
         [HttpPost]
         public async Task<ActionResult<ProjectDto>> CreateProject([FromBody] ProjectCreateDto projectDto)
         {
@@ -67,6 +94,15 @@ namespace Lumen_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza os dados de um projeto existente.
+        /// </summary>
+        /// <param name="id">ID do projeto a ser atualizado.</param>
+        /// <param name="projectDto">Novos dados do projeto.</param>
+        /// <returns>Projeto atualizado.</returns>
+        /// <response code="200">Projeto atualizado com sucesso.</response>
+        /// <response code="400">Erro de validação nos dados enviados.</response>
+        /// <response code="404">Projeto não encontrado.</response>
         [HttpPut("{id}")]
         public async Task<ActionResult<ProjectDto>> UpdateProject(int id, [FromBody] ProjectUpdateDto projectDto)
         {
@@ -82,6 +118,12 @@ namespace Lumen_API.Controllers
             return Ok(updatedProject);
         }
 
+        /// <summary>
+        /// Exclui um projeto pelo ID.
+        /// </summary>
+        /// <param name="id">ID do projeto a ser excluído.</param>
+        /// <response code="204">Projeto excluído com sucesso.</response>
+        /// <response code="404">Projeto não encontrado.</response>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProject(int id)
         {
