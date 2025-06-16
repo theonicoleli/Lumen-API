@@ -89,13 +89,6 @@ namespace Lumen_API.Controllers
         [Authorize]
         public async Task<ActionResult<UserDto>> GetUserById(int id)
         {
-            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(currentUserIdString) ||
-                (currentUserIdString != id.ToString() && !User.IsInRole(UserRole.Admin.ToString())))
-            {
-                return Forbid();
-            }
-
             var user = await _userService.GetUserByIdAsync(id);
             if (user == null)
             {
@@ -128,13 +121,6 @@ namespace Lumen_API.Controllers
         [Authorize]
         public async Task<ActionResult<UserDto>> UpdateUserCore(int userId, [FromBody] UserUpdateDto dto)
         {
-            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(currentUserIdString) ||
-                (currentUserIdString != userId.ToString() && !User.IsInRole(UserRole.Admin.ToString())))
-            {
-                return Forbid();
-            }
-
             try
             {
                 var updatedUser = await _userService.UpdateUserCoreAsync(userId, dto);
@@ -158,13 +144,6 @@ namespace Lumen_API.Controllers
         [Authorize]
         public async Task<ActionResult<DonorProfileDto>> UpdateDonorProfile(int userId, [FromForm] DonorProfileUpdateDto dto, IFormFile? imageFile)
         {
-            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(currentUserIdString) ||
-                (currentUserIdString != userId.ToString() && !User.IsInRole(UserRole.Admin.ToString())))
-            {
-                return Forbid();
-            }
-
             var userToUpdate = await _userService.GetUserByIdAsync(userId);
             if (userToUpdate == null) return NotFound($"Usuário com ID {userId} não encontrado.");
             if (!User.IsInRole(UserRole.Admin.ToString()) && userToUpdate.Role != UserRole.Donor)
@@ -188,13 +167,6 @@ namespace Lumen_API.Controllers
         [Authorize]
         public async Task<ActionResult<OrgProfileDto>> UpdateOrgProfile(int userId, [FromForm] OrgProfileUpdateDto dto, IFormFile? imageFile)
         {
-            var currentUserIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(currentUserIdString) ||
-                (currentUserIdString != userId.ToString() && !User.IsInRole(UserRole.Admin.ToString())))
-            {
-                return Forbid();
-            }
-
             var userToUpdate = await _userService.GetUserByIdAsync(userId);
             if (userToUpdate == null) return NotFound($"Usuário com ID {userId} não encontrado.");
             if (!User.IsInRole(UserRole.Admin.ToString()) && userToUpdate.Role != UserRole.Org)

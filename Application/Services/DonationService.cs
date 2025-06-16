@@ -60,6 +60,7 @@ namespace Application.Services
                 Status = d.Status,
                 DonationIsAnonymous = d.DonationIsAnonymous,
                 DonationDonorMessage = d.DonationDonorMessage,
+                OrgId = d.OrgId,
                 DonorUserId = d.Donor.UserId,
                 DonorName = d.Donor.Name,
                 DonorDocument = d.Donor.Document,
@@ -99,7 +100,7 @@ namespace Application.Services
                 DonationIsAnonymous = dto.DonationIsAnonymous,
                 DonationDonorMessage = dto.DonationDonorMessage ?? string.Empty,
                 DonorId = dto.DonorId,
-                OrgId = dto.OrgId
+                OrgId = dto.OrgId,
             };
 
             await _donationRepository.AddAsync(donation);

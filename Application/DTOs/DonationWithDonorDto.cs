@@ -12,6 +12,7 @@ namespace Application.DTOs
         public bool DonationIsAnonymous { get; set; }
         public string DonationDonorMessage { get; set; } = string.Empty;
         public int DonorUserId { get; set; } 
+        public int OrgId { get; set; }
         public string? DonorName { get; set; }
         public string? DonorDocument { get; set; }
         public string? DonorImageUrl { get; set; }
