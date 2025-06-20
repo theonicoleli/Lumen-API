@@ -11,5 +11,6 @@ namespace Infra.Interfaces
         Task UpdateAsync(Donation donation);
         Task DeleteAsync(int id);
         Task SaveChangesAsync();
+        Task<IEnumerable<Donation>> GetByOrgIdAsync(int orgUserId);
     }
 }

@@ -14,11 +14,21 @@ namespace Infra.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync() =>
-            await _context.Users.ToListAsync();
+        public async Task<IEnumerable<User>> GetAllAsync()
+        {
+            return await _context.Users
+                                 .Include(u => u.DonorProfile)
+                                 .Include(u => u.OrgProfile)
+                                 .ToListAsync();
+        }
 
-        public async Task<User> GetByIdAsync(int id) =>
-            await _context.Users.FindAsync(id);
+        public async Task<User?> GetByIdAsync(int id)
+        {
+            return await _context.Users
+                                 .Include(u => u.DonorProfile)
+                                 .Include(u => u.OrgProfile)
+                                 .FirstOrDefaultAsync(u => u.Id == id);
+        }
 
         public async Task AddAsync(User user) =>
             await _context.Users.AddAsync(user);
@@ -40,9 +50,13 @@ namespace Infra.Repositories
             await _context.Users
                 .FirstOrDefaultAsync(u => u.UserEmail == email && u.UserPassword == password);
 
-        public async Task<User?> GetByEmailAsync(string email) =>
-            await _context.Users
-                          .FirstOrDefaultAsync(u => u.UserEmail == email);
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _context.Users
+                                 .Include(u => u.DonorProfile)
+                                 .Include(u => u.OrgProfile)
+                                 .FirstOrDefaultAsync(u => u.UserEmail == email);
+        }
     }
 
 }

@@ -6,6 +6,8 @@
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 		<Dockerfile>Dockerfile</Dockerfile>
 		<DockerfileContext>.</DockerfileContext>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<NoWarn>$(NoWarn);1591</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -24,6 +26,10 @@
 		  <PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Uploads\Images\" />
 	</ItemGroup>
 
 </Project>

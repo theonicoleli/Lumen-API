@@ -18,136 +18,164 @@ namespace Application.Services
             _orgRepository = orgRepository;
         }
 
-        public async Task<IEnumerable<DonationDto>> GetAllDonationsAsync()
+        private DonationDto MapToDto(Donation donation)
         {
-            var donations = await _donationRepository.GetAllAsync();
-            return donations.Select(d => new DonationDto
-            {
-                DonationId = d.DonationId,
-                DonationMethod = d.DonationMethod,
-                DonationDate = d.DonationDate,
-                DonationAmount = d.DonationAmount,
-                DonationStatus = d.DonationStatus,
-                DonationIsAnonymous = d.DonationIsAnonymous,
-                DonationDonorMessage = d.DonationDonorMessage,
-                DonorId = d.DonorId,
-                OrgId = d.OrgId
-            });
-        }
-
-        public async Task<DonationDto> GetDonationByIdAsync(int id)
-        {
-            var donation = await _donationRepository.GetByIdAsync(id);
-            if (donation == null) return null;
             return new DonationDto
             {
                 DonationId = donation.DonationId,
                 DonationMethod = donation.DonationMethod,
                 DonationDate = donation.DonationDate,
                 DonationAmount = donation.DonationAmount,
-                DonationStatus = donation.DonationStatus,
+                Status = donation.Status,
                 DonationIsAnonymous = donation.DonationIsAnonymous,
                 DonationDonorMessage = donation.DonationDonorMessage,
                 DonorId = donation.DonorId,
-                OrgId = donation.OrgId
+                OrgId = donation.OrgId,
             };
+        }
+        private DonationWithDonorDto MapToDonationWithDonorDto(Donation d)
+        {
+            if (d.Donor == null)
+                return new DonationWithDonorDto
+                {
+                    DonationId = d.DonationId,
+                    DonationMethod = d.DonationMethod,
+                    DonationDate = d.DonationDate,
+                    DonationAmount = d.DonationAmount,
+                    Status = d.Status,
+                    DonationIsAnonymous = d.DonationIsAnonymous,
+                    DonationDonorMessage = d.DonationDonorMessage,
+                    DonorUserId = d.DonorId,
+                    DonorName = null,
+                    DonorDocument = null,
+                    DonorImageUrl = null
+                };
+
+            return new DonationWithDonorDto
+            {
+                DonationId = d.DonationId,
+                DonationMethod = d.DonationMethod,
+                DonationDate = d.DonationDate,
+                DonationAmount = d.DonationAmount,
+                Status = d.Status,
+                DonationIsAnonymous = d.DonationIsAnonymous,
+                DonationDonorMessage = d.DonationDonorMessage,
+                OrgId = d.OrgId,
+                DonorUserId = d.Donor.UserId,
+                DonorName = d.Donor.Name,
+                DonorDocument = d.Donor.Document,
+                DonorImageUrl = d.Donor.ImageUrl
+            };
+        }
+
+
+        public async Task<IEnumerable<DonationDto>> GetAllDonationsAsync()
+        {
+            var donations = await _donationRepository.GetAllAsync();
+            return donations.Select(MapToDto).ToList();
+        }
+
+        public async Task<DonationDto?> GetDonationByIdAsync(int id)
+        {
+            var donation = await _donationRepository.GetByIdAsync(id);
+            return donation == null ? null : MapToDto(donation);
         }
 
         public async Task<DonationDto> CreateDonationAsync(DonationCreateDto dto)
         {
-            var donor = await _donorRepository.GetByIdAsync(dto.DonorId);
-            if (donor == null)
-                throw new KeyNotFoundException($"Donor {dto.DonorId} não encontrado.");
+            var donorProfile = await _donorRepository.GetByIdAsync(dto.DonorId);
+            if (donorProfile == null)
+                throw new KeyNotFoundException($"Perfil de Doador com UserID {dto.DonorId} não encontrado.");
 
-            var org = await _orgRepository.GetByIdAsync(dto.OrgId);
-            if (org == null)
-                throw new KeyNotFoundException($"Org {dto.OrgId} não encontrada.");
+            var orgProfile = await _orgRepository.GetByIdAsync(dto.OrgId);
+            if (orgProfile == null)
+                throw new KeyNotFoundException($"Perfil de Organização com UserID {dto.OrgId} não encontrado.");
 
             var donation = new Donation
             {
                 DonationMethod = dto.DonationMethod,
                 DonationDate = dto.DonationDate,
                 DonationAmount = dto.DonationAmount,
-                DonationStatus = dto.DonationStatus,
+                Status = dto.Status,
                 DonationIsAnonymous = dto.DonationIsAnonymous,
-                DonationDonorMessage = dto.DonationDonorMessage,
+                DonationDonorMessage = dto.DonationDonorMessage ?? string.Empty,
                 DonorId = dto.DonorId,
-                OrgId = dto.OrgId
+                OrgId = dto.OrgId,
             };
 
             await _donationRepository.AddAsync(donation);
             await _donationRepository.SaveChangesAsync();
 
-            return new DonationDto
-            {
-                DonationId = donation.DonationId,
-                DonationMethod = donation.DonationMethod,
-                DonationDate = donation.DonationDate,
-                DonationAmount = donation.DonationAmount,
-                DonationStatus = donation.DonationStatus,
-                DonationIsAnonymous = donation.DonationIsAnonymous,
-                DonationDonorMessage = donation.DonationDonorMessage,
-                DonorId = donation.DonorId,
-                OrgId = donation.OrgId
-            };
+            donation.Donor = donorProfile;
+            donation.Org = orgProfile;
+            return MapToDto(donation);
         }
 
-        public async Task<DonationDto> UpdateDonationAsync(int id, DonationCreateDto donationDto)
+        public async Task<DonationDto?> UpdateDonationAsync(int id, DonationCreateDto dto)
         {
             var donation = await _donationRepository.GetByIdAsync(id);
             if (donation == null) return null;
 
-            donation.DonationMethod = donationDto.DonationMethod;
-            donation.DonationDate = donationDto.DonationDate;
-            donation.DonationAmount = donationDto.DonationAmount;
-            donation.DonationStatus = donationDto.DonationStatus;
-            donation.DonationIsAnonymous = donationDto.DonationIsAnonymous;
-            donation.DonationDonorMessage = donationDto.DonationDonorMessage;
-            donation.DonorId = donationDto.DonorId;
-            donation.OrgId = donationDto.OrgId;
+            if (dto.DonorId != donation.DonorId)
+            {
+                var donorProfile = await _donorRepository.GetByIdAsync(dto.DonorId);
+                if (donorProfile == null)
+                    throw new KeyNotFoundException($"Novo Perfil de Doador com UserID {dto.DonorId} não encontrado.");
+                donation.DonorId = dto.DonorId;
+                donation.Donor = donorProfile;
+            }
+
+            if (dto.OrgId != donation.OrgId)
+            {
+                var orgProfile = await _orgRepository.GetByIdAsync(dto.OrgId);
+                if (orgProfile == null)
+                    throw new KeyNotFoundException($"Novo Perfil de Organização com UserID {dto.OrgId} não encontrado.");
+                donation.OrgId = dto.OrgId;
+                donation.Org = orgProfile;
+            }
+
+            donation.DonationMethod = dto.DonationMethod;
+            donation.DonationDate = dto.DonationDate;
+            donation.DonationAmount = dto.DonationAmount;
+            donation.Status = dto.Status;
+            donation.DonationIsAnonymous = dto.DonationIsAnonymous;
+            donation.DonationDonorMessage = dto.DonationDonorMessage ?? string.Empty;
 
             await _donationRepository.UpdateAsync(donation);
             await _donationRepository.SaveChangesAsync();
 
-            return new DonationDto
-            {
-                DonationId = donation.DonationId,
-                DonationMethod = donation.DonationMethod,
-                DonationDate = donation.DonationDate,
-                DonationAmount = donation.DonationAmount,
-                DonationStatus = donation.DonationStatus,
-                DonationIsAnonymous = donation.DonationIsAnonymous,
-                DonationDonorMessage = donation.DonationDonorMessage,
-                DonorId = donation.DonorId,
-                OrgId = donation.OrgId
-            };
+            var updatedDonation = await _donationRepository.GetByIdAsync(id);
+            return updatedDonation == null ? null : MapToDto(updatedDonation);
         }
 
-        public async Task<IEnumerable<DonationWithDonorDto>> GetDonationsByDonorAsync(int donorId)
+        public async Task<IEnumerable<DonationWithDonorDto>> GetDonationsByDonorAsync(int donorUserId)
         {
-            var donations = await _donationRepository.GetByDonorIdAsync(donorId);
+            var donations = await _donationRepository.GetByDonorIdAsync(donorUserId);
+            if (donations == null || !donations.Any())
+                return Enumerable.Empty<DonationWithDonorDto>();
 
-            return donations.Select(d => new DonationWithDonorDto
-            {
-                DonationId = d.DonationId,
-                DonationMethod = d.DonationMethod,
-                DonationDate = d.DonationDate,
-                DonationAmount = d.DonationAmount,
-                DonationStatus = d.DonationStatus,
-                DonationIsAnonymous = d.DonationIsAnonymous,
-                DonationDonorMessage = d.DonationDonorMessage,
-
-                DonorId = d.Donor.DonorId,
-                DonorDocument = d.Donor.DonorDocument,
-                DonorLocation = d.Donor.DonorLocation
-            });
+            return donations.Select(MapToDonationWithDonorDto).ToList();
         }
 
         public async Task<bool> DeleteDonationAsync(int id)
         {
+            var donation = await _donationRepository.GetByIdAsync(id);
+            if (donation == null)
+                return false;
+
             await _donationRepository.DeleteAsync(id);
             await _donationRepository.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<DonationDto>> GetDonationsByOrgAsync(int orgUserId)
+        {
+            var donations = await _donationRepository.GetByOrgIdAsync(orgUserId);
+            if (donations == null || !donations.Any())
+            {
+                return Enumerable.Empty<DonationDto>();
+            }
+            return donations.Select(MapToDto).ToList();
         }
     }
 }

@@ -1,19 +1,24 @@
-﻿using Converters;
-using System.Text.Json.Serialization;
+﻿using Domain.Entities.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.DTOs
 {
     public class DonationCreateDto
     {
+        [Required]
         public string DonationMethod { get; set; } = string.Empty;
-
-        [JsonConverter(typeof(DateTimeCustomConverter))]
+        [Required]
         public DateTime DonationDate { get; set; }
+        [Required]
+        [Range(0.01, double.MaxValue)]
         public decimal DonationAmount { get; set; }
-        public string DonationStatus { get; set; } = string.Empty;
+        [Required]
+        public DonationStatusEnum Status { get; set; }
         public bool DonationIsAnonymous { get; set; }
         public string DonationDonorMessage { get; set; } = string.Empty;
+        [Required]
         public int DonorId { get; set; }
+        [Required]
         public int OrgId { get; set; }
     }
 }

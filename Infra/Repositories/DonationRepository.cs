@@ -44,5 +44,14 @@ namespace Infra.Repositories
 
         public async Task SaveChangesAsync() =>
             await _context.SaveChangesAsync();
+
+        public async Task<IEnumerable<Donation>> GetByOrgIdAsync(int orgUserId)
+        {
+            return await _context.Donations
+                                 .Where(d => d.OrgId == orgUserId)
+                                 .Include(d => d.Donor)
+                                 .Include(d => d.Org)
+                                 .ToListAsync();
+        }
     }
 }

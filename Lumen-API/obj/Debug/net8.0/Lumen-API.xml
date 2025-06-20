@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lumen-API</name>
+    </assembly>
+    <members>
+        <member name="M:Lumen_API.Controllers.AuthController.Login(Domain.Entities.LoginRequest)">
+            <summary>
+            Realiza a autenticação de um usuário e retorna um token JWT.
+            </summary>
+            <param name="loginRequest">Credenciais do usuário (e-mail e senha).</param>
+            <returns>Token JWT se as credenciais forem válidas.</returns>
+            <response code="200">Login bem-sucedido, token retornado.</response>
+            <response code="400">Dados inválidos no corpo da requisição.</response>
+            <response code="401">Credenciais inválidas.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.GetAllDonations">
+            <summary>
+            Retorna todas as doações cadastradas.
+            </summary>
+            <returns>Lista de doações.</returns>
+            <response code="200">Lista retornada com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.GetDonationById(System.Int32)">
+            <summary>
+            Retorna os detalhes de uma doação pelo ID.
+            </summary>
+            <param name="id">ID da doação.</param>
+            <returns>Objeto da doação encontrada.</returns>
+            <response code="200">Doação encontrada.</response>
+            <response code="404">Doação não encontrada.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.GetByDonor(System.Int32)">
+            <summary>
+            Lista todas as doações feitas por um doador específico.
+            </summary>
+            <param name="donorId">ID do doador.</param>
+            <returns>Lista de doações associadas ao doador.</returns>
+            <response code="200">Lista encontrada.</response>
+            <response code="404">Nenhuma doação encontrada para o doador.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.CreateDonation(Application.DTOs.DonationCreateDto)">
+            <summary>
+            Cria uma nova doação.
+            </summary>
+            <param name="donationDto">Objeto com os dados da doação.</param>
+            <returns>Objeto da doação criada.</returns>
+            <response code="201">Doação criada com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.UpdateDonation(System.Int32,Application.DTOs.DonationCreateDto)">
+            <summary>
+            Atualiza uma doação existente.
+            </summary>
+            <param name="id">ID da doação a ser atualizada.</param>
+            <param name="donationDto">Novos dados da doação.</param>
+            <returns>Objeto da doação atualizada.</returns>
+            <response code="200">Atualização realizada com sucesso.</response>
+            <response code="404">Doação não encontrada.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonationsController.DeleteDonation(System.Int32)">
+            <summary>
+            Remove uma doação pelo ID.
+            </summary>
+            <param name="id">ID da doação a ser excluída.</param>
+            <response code="204">Doação excluída com sucesso.</response>
+            <response code="404">Doação não encontrada.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonorsController.GetAllDonorProfiles">
+            <summary>
+            Retorna todos os perfis de doadores cadastrados.
+            </summary>
+            <remarks>Requer permissão de administrador.</remarks>
+            <returns>Lista de perfis de doadores.</returns>
+            <response code="200">Lista retornada com sucesso.</response>
+            <response code="403">Acesso negado para usuários não administradores.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.DonorsController.GetDonorProfileByUserId(System.Int32)">
+            <summary>
+            Retorna o perfil de doador associado a um usuário específico.
+            </summary>
+            <param name="userId">ID do usuário a ser consultado.</param>
+            <returns>Perfil de doador vinculado ao usuário.</returns>
+            <response code="200">Perfil encontrado com sucesso.</response>
+            <response code="403">Usuário autenticado não tem permissão para acessar o perfil de outro usuário.</response>
+            <response code="404">Usuário ou perfil de doador não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.OrgsController.GetAllOrgProfiles">
+            <summary>
+            Retorna todos os perfis de organizações cadastradas.
+            </summary>
+            <remarks>Este endpoint é público e não exige autenticação.</remarks>
+            <returns>Lista de perfis de organizações.</returns>
+            <response code="200">Lista de organizações retornada com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.OrgsController.GetOrgProfileByUserId(System.Int32)">
+            <summary>
+            Retorna o perfil de organização associado a um usuário específico.
+            </summary>
+            <param name="userId">ID do usuário a ser consultado.</param>
+            <returns>Perfil da organização vinculada ao usuário.</returns>
+            <response code="200">Perfil encontrado com sucesso.</response>
+            <response code="404">Usuário não encontrado ou não possui perfil de organização.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.GetAllProjects">
+            <summary>
+            Retorna todos os projetos cadastrados no sistema.
+            </summary>
+            <returns>Lista de projetos.</returns>
+            <response code="200">Lista retornada com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.GetProjectById(System.Int32)">
+            <summary>
+            Retorna os detalhes de um projeto específico pelo ID.
+            </summary>
+            <param name="id">ID do projeto.</param>
+            <returns>Objeto contendo os dados do projeto.</returns>
+            <response code="200">Projeto encontrado.</response>
+            <response code="404">Projeto não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.GetProjectsByOrgId(System.Int32)">
+            <summary>
+            Retorna todos os projetos vinculados a uma organização específica.
+            </summary>
+            <param name="orgId">ID da organização.</param>
+            <returns>Lista de projetos associados.</returns>
+            <response code="200">Lista de projetos retornada com sucesso.</response>
+            <response code="404">Nenhum projeto encontrado para a organização.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.CreateProject(Application.DTOs.ProjectCreateDto)">
+            <summary>
+            Cria um novo projeto.
+            </summary>
+            <param name="projectDto">Dados do projeto a ser criado.</param>
+            <returns>Projeto criado com sucesso.</returns>
+            <response code="201">Projeto criado.</response>
+            <response code="400">Erro de validação nos dados enviados.</response>
+            <response code="404">Entidade relacionada não encontrada (ex: ONG inexistente).</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.UpdateProject(System.Int32,Application.DTOs.ProjectUpdateDto)">
+            <summary>
+            Atualiza os dados de um projeto existente.
+            </summary>
+            <param name="id">ID do projeto a ser atualizado.</param>
+            <param name="projectDto">Novos dados do projeto.</param>
+            <returns>Projeto atualizado.</returns>
+            <response code="200">Projeto atualizado com sucesso.</response>
+            <response code="400">Erro de validação nos dados enviados.</response>
+            <response code="404">Projeto não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ProjectsController.DeleteProject(System.Int32)">
+            <summary>
+            Exclui um projeto pelo ID.
+            </summary>
+            <param name="id">ID do projeto a ser excluído.</param>
+            <response code="204">Projeto excluído com sucesso.</response>
+            <response code="404">Projeto não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ReportsController.GetAllReports">
+            <summary>
+            Retorna todos os relatórios cadastrados no sistema.
+            </summary>
+            <returns>Lista de relatórios.</returns>
+            <response code="200">Lista retornada com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ReportsController.GetReportById(System.Int32)">
+            <summary>
+            Retorna os detalhes de um relatório específico pelo ID.
+            </summary>
+            <param name="id">ID do relatório.</param>
+            <returns>Objeto contendo os dados do relatório.</returns>
+            <response code="200">Relatório encontrado com sucesso.</response>
+            <response code="404">Relatório não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ReportsController.CreateReport(Application.DTOs.ReportCreateDto)">
+            <summary>
+            Cria um novo relatório.
+            </summary>
+            <param name="reportDto">Dados do relatório a ser criado.</param>
+            <returns>Relatório criado com sucesso.</returns>
+            <response code="201">Relatório criado com sucesso.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ReportsController.UpdateReport(System.Int32,Application.DTOs.ReportCreateDto)">
+            <summary>
+            Atualiza um relatório existente.
+            </summary>
+            <param name="id">ID do relatório a ser atualizado.</param>
+            <param name="reportDto">Novos dados do relatório.</param>
+            <returns>Relatório atualizado.</returns>
+            <response code="200">Relatório atualizado com sucesso.</response>
+            <response code="404">Relatório não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.ReportsController.DeleteReport(System.Int32)">
+            <summary>
+            Exclui um relatório pelo ID.
+            </summary>
+            <param name="id">ID do relatório a ser excluído.</param>
+            <response code="204">Relatório excluído com sucesso.</response>
+            <response code="404">Relatório não encontrado.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.RegisterAdmin(Application.DTOs.UserCreateDto)">
+            <summary>
+            Registra um novo usuário com papel de administrador.
+            </summary>
+            <param name="dto">Objeto contendo os dados do usuário administrador.</param>
+            <returns>O usuário criado, com ID e informações cadastradas.</returns>
+            <response code="201">Usuário criado com sucesso.</response>
+            <response code="400">Erro de validação ou papel inválido.</response>
+            <response code="409">Usuário já existente.</response>
+            <response code="500">Erro interno do servidor.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.RegisterDonor(Application.DTOs.UserDonorCreateDto,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Registra um novo usuário com perfil de doador.
+            </summary>
+            <param name="dto">Dados do doador, como nome, e-mail, senha etc.</param>
+            <param name="imageFile">Imagem de perfil opcional (formato multipart/form-data).</param>
+            <returns>Dados do usuário criado.</returns>
+            <response code="201">Usuário criado com sucesso.</response>
+            <response code="400">Erro de validação nos dados.</response>
+            <response code="409">Conflito: e-mail ou outro campo já cadastrado.</response>
+            <response code="500">Erro interno ao processar a solicitação.</response>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.RegisterOrg(Application.DTOs.UserOrgCreateDto,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Registra um novo usuário com perfil de organização.
+            </summary>
+            <param name="dto">Dados da organização, como nome fantasia, CNPJ, descrição etc.</param>
+            <param name="imageFile">Imagem de perfil opcional da organização.</param>
+            <returns>Dados da organização criada.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.GetUserById(System.Int32)">
+            <summary>
+            Retorna os dados de um usuário a partir do ID.
+            </summary>
+            <param name="id">ID do usuário a ser consultado.</param>
+            <returns>Objeto com as informações do usuário.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.GetUserByEmail(System.String)">
+            <summary>
+            Busca um usuário pelo e-mail (somente administradores).
+            </summary>
+            <param name="email">E-mail do usuário.</param>
+            <returns>Informações completas do usuário.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.GetAllUsers">
+            <summary>
+            Lista todos os usuários cadastrados no sistema.
+            </summary>
+            <returns>Lista de usuários.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.UpdateUserCore(System.Int32,Application.DTOs.UserUpdateDto)">
+            <summary>
+            Atualiza informações básicas (core) de um usuário.
+            </summary>
+            <param name="userId">ID do usuário a ser atualizado.</param>
+            <param name="dto">Dados atualizados do usuário.</param>
+            <returns>Usuário atualizado.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.UpdateDonorProfile(System.Int32,Application.DTOs.DonorProfileUpdateDto,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Atualiza ou cria o perfil de doador para um usuário existente.
+            </summary>
+            <param name="userId">ID do usuário.</param>
+            <param name="dto">Informações do perfil de doador.</param>
+            <param name="imageFile">Imagem de perfil opcional.</param>
+            <returns>Perfil de doador atualizado.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.UpdateOrgProfile(System.Int32,Application.DTOs.OrgProfileUpdateDto,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Atualiza ou cria o perfil de organização para um usuário existente.
+            </summary>
+            <param name="userId">ID do usuário.</param>
+            <param name="dto">Informações do perfil da organização.</param>
+            <param name="imageFile">Imagem de perfil opcional.</param>
+            <returns>Perfil de organização atualizado.</returns>
+        </member>
+        <member name="M:Lumen_API.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Exclui um usuário do sistema (somente administradores).
+            </summary>
+            <param name="id">ID do usuário a ser removido.</param>
+            <returns>Sem conteúdo se a exclusão for bem-sucedida.</returns>
+        </member>
+    </members>
+</doc>

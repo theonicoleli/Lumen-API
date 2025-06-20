@@ -9,7 +9,6 @@ using Application.Services;
 using Infra.Data;
 using Infra.Interfaces;
 using Infra.Repositories;
-using Infra.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,8 +16,29 @@ using System;
 using Infra.Migrations;
 using Converters;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.OpenApi.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Lumen API",
+        Version = "v1",
+        Description = "Documentação da API com exemplos de payloads reais."
+    });
+
+    // Para incluir comentários XML dos controllers
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+});
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -33,19 +53,32 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDonorRepository, DonorRepository>();
 builder.Services.AddScoped<IOrgRepository, OrgRepository>();
 builder.Services.AddScoped<IDonationRepository, DonationRepository>();
 builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
+builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IDonorService, DonorService>();
 builder.Services.AddScoped<IOrgService, OrgService>();
 builder.Services.AddScoped<IDonationService, DonationService>();
 builder.Services.AddScoped<IReportService, ReportService>();
-
-builder.Services.AddScoped<IFirebaseStorageService, FirebaseStorageService>();
+builder.Services.AddScoped<ILocalFileStorageService, LocalFileStorageService>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings.GetValue<string>("SecretKey");
@@ -115,7 +148,33 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+var configuredStoragePath = builder.Configuration.GetValue<string>("FileStorageSettings:LocalPath") ?? "Uploads/Images";
+var physicalUploadsPath = Path.Combine(builder.Environment.ContentRootPath, configuredStoragePath);
+
+if (!Directory.Exists(physicalUploadsPath))
+    Directory.CreateDirectory(physicalUploadsPath);
+
+var publicBaseUrl = builder.Configuration.GetValue<string>("FileStorageSettings:PublicBaseUrlPath") ?? "/static-images";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(physicalUploadsPath),
+    RequestPath = publicBaseUrl
+});
+
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lumen API v1");
+    });
+}
+
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();

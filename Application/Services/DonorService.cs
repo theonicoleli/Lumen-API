@@ -8,78 +8,38 @@ namespace Application.Services
     public class DonorService : IDonorService
     {
         private readonly IDonorRepository _donorRepository;
+        private readonly ILocalFileStorageService _localFileStorageService;
 
-        public DonorService(IDonorRepository donorRepository)
+        public DonorService(IDonorRepository donorRepository, ILocalFileStorageService localFileStorageService)
         {
             _donorRepository = donorRepository;
+            _localFileStorageService = localFileStorageService;
         }
 
-        public async Task<IEnumerable<DonorDto>> GetAllDonorsAsync()
+        private DonorProfileDto MapToDonorProfileDto(Donor donorProfileEntity)
         {
-            var donors = await _donorRepository.GetAllAsync();
-            return donors.Select(d => new DonorDto
+            if (donorProfileEntity == null) return null!;
+            return new DonorProfileDto
             {
-                DonorId = d.DonorId,
-                DonorDocument = d.DonorDocument,
-                DonorLocation = d.DonorLocation
-            });
-        }
-
-        public async Task<DonorDto> GetDonorByIdAsync(int id)
-        {
-            var donor = await _donorRepository.GetByIdAsync(id);
-            if (donor == null) return null;
-            return new DonorDto
-            {
-                DonorId = donor.DonorId,
-                DonorDocument = donor.DonorDocument,
-                DonorLocation = donor.DonorLocation
+                UserId = donorProfileEntity.UserId,
+                Name = donorProfileEntity.Name,
+                Document = donorProfileEntity.Document,
+                Phone = donorProfileEntity.Phone,
+                BirthDate = donorProfileEntity.BirthDate,
+                ImageUrl = _localFileStorageService.GetFileUrl(donorProfileEntity.ImageUrl)
             };
         }
 
-        public async Task<DonorDto> CreateDonorAsync(DonorCreateDto donorDto)
+        public async Task<IEnumerable<DonorProfileDto>> GetAllDonorsAsync()
         {
-            var donor = new Donor
-            {
-                DonorDocument = donorDto.DonorDocument,
-                DonorLocation = donorDto.DonorLocation
-            };
-
-            await _donorRepository.AddAsync(donor);
-            await _donorRepository.SaveChangesAsync();
-
-            return new DonorDto
-            {
-                DonorId = donor.DonorId,
-                DonorDocument = donor.DonorDocument,
-                DonorLocation = donor.DonorLocation
-            };
+            var donorProfileEntities = await _donorRepository.GetAllAsync();
+            return donorProfileEntities.Select(MapToDonorProfileDto).ToList();
         }
 
-        public async Task<DonorDto> UpdateDonorAsync(int id, DonorCreateDto donorDto)
+        public async Task<DonorProfileDto?> GetDonorByUserIdAsync(int userId)
         {
-            var donor = await _donorRepository.GetByIdAsync(id);
-            if (donor == null) return null;
-
-            donor.DonorDocument = donorDto.DonorDocument;
-            donor.DonorLocation = donorDto.DonorLocation;
-
-            await _donorRepository.UpdateAsync(donor);
-            await _donorRepository.SaveChangesAsync();
-
-            return new DonorDto
-            {
-                DonorId = donor.DonorId,
-                DonorDocument = donor.DonorDocument,
-                DonorLocation = donor.DonorLocation
-            };
-        }
-
-        public async Task<bool> DeleteDonorAsync(int id)
-        {
-            await _donorRepository.DeleteAsync(id);
-            await _donorRepository.SaveChangesAsync();
-            return true;
+            var donorProfileEntity = await _donorRepository.GetByUserIdAsync(userId);
+            return MapToDonorProfileDto(donorProfileEntity);
         }
     }
 }

@@ -7,104 +7,45 @@ namespace Application.Services
     public class OrgService : IOrgService
     {
         private readonly IOrgRepository _orgRepository;
+        private readonly ILocalFileStorageService _localFileStorageService;
 
-        public OrgService(IOrgRepository orgRepository)
+        public OrgService(IOrgRepository orgRepository, ILocalFileStorageService localFileStorageService)
         {
             _orgRepository = orgRepository;
+            _localFileStorageService = localFileStorageService;
         }
 
-        public async Task<IEnumerable<OrgDto>> GetAllOrgsAsync()
+        private OrgProfileDto MapToOrgProfileDto(Domain.Entities.Org orgProfileEntity)
         {
-            var orgs = await _orgRepository.GetAllAsync();
-            return orgs.Select(o => new OrgDto
-            {
-                OrgId = o.OrgId,
-                OrgDescription = o.OrgDescription,
-                OrgWebsiteUrl = o.OrgWebsiteUrl,
-                OrgLocation = o.OrgLocation,
-                OrgFoundationDate = o.OrgFoundationDate,
-                OrgDateCreated = o.OrgDateCreated,
-                AdminName = o.AdminName,
-                AdminPhone = o.AdminPhone
-            });
-        }
+            if (orgProfileEntity == null) return null!;
 
-        public async Task<OrgDto> GetOrgByIdAsync(int id)
-        {
-            var org = await _orgRepository.GetByIdAsync(id);
-            if (org == null) return null;
-            return new OrgDto
+            return new OrgProfileDto
             {
-                OrgId = org.OrgId,
-                OrgDescription = org.OrgDescription,
-                OrgWebsiteUrl = org.OrgWebsiteUrl,
-                OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate,
-                OrgDateCreated = org.OrgDateCreated,
-                AdminName = org.AdminName,
-                AdminPhone = org.AdminPhone
+                UserId = orgProfileEntity.UserId,
+                OrgName = orgProfileEntity.OrgName,
+                Phone = orgProfileEntity.Phone,
+                Document = orgProfileEntity.Document,
+                Address = orgProfileEntity.Address,
+                Description = orgProfileEntity.Description,
+                AdminName = orgProfileEntity.AdminName,
+                ImageUrl = _localFileStorageService.GetFileUrl(orgProfileEntity.ImageUrl),
+                OrgWebsiteUrl = orgProfileEntity.OrgWebsiteUrl,
+                OrgFoundationDate = orgProfileEntity.OrgFoundationDate,
+                AdminPhone = orgProfileEntity.AdminPhone
             };
         }
 
-        public async Task<OrgDto> CreateOrgAsync(OrgCreateDto createDto)
+        public async Task<IEnumerable<OrgProfileDto>> GetAllOrgsAsync()
         {
-            var org = new Domain.Entities.Org
-            {
-                OrgDescription = createDto.OrgDescription,
-                OrgWebsiteUrl = createDto.OrgWebsiteUrl,
-                OrgLocation = createDto.OrgLocation,
-                OrgFoundationDate = createDto.OrgFoundationDate,
-                OrgDateCreated = default,
-                AdminName = createDto.AdminName,
-                AdminPhone = createDto.AdminPhone
-            };
-
-            await _orgRepository.AddAsync(org);
-            await _orgRepository.SaveChangesAsync();
-
-            return new OrgDto
-            {
-                OrgId = org.OrgId,
-                OrgDescription = org.OrgDescription,
-                OrgWebsiteUrl = org.OrgWebsiteUrl,
-                OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate,
-                OrgDateCreated = org.OrgDateCreated,
-                AdminName = org.AdminName,
-                AdminPhone = org.AdminPhone
-            };
+            var orgProfileEntities = await _orgRepository.GetAllAsync();
+            return orgProfileEntities.Select(MapToOrgProfileDto).ToList();
         }
 
-        public async Task<OrgDto> UpdateOrgAsync(int id, OrgUpdateDto updateDto)
+        public async Task<OrgProfileDto?> GetOrgByUserIdAsync(int userId)
         {
-            var org = await _orgRepository.GetByIdAsync(id);
-            if (org == null) return null;
-
-            org.OrgDescription = updateDto.OrgDescription;
-            org.OrgWebsiteUrl = updateDto.OrgWebsiteUrl;
-            org.OrgLocation = updateDto.OrgLocation;
-
-            await _orgRepository.UpdateAsync(org);
-            await _orgRepository.SaveChangesAsync();
-
-            return new OrgDto
-            {
-                OrgId = org.OrgId,
-                OrgDescription = org.OrgDescription,
-                OrgWebsiteUrl = org.OrgWebsiteUrl,
-                OrgLocation = org.OrgLocation,
-                OrgFoundationDate = org.OrgFoundationDate,
-                OrgDateCreated = org.OrgDateCreated,
-                AdminName = org.AdminName,
-                AdminPhone = org.AdminPhone
-            };
+            var orgProfileEntity = await _orgRepository.GetByIdAsync(userId);
+            return MapToOrgProfileDto(orgProfileEntity);
         }
 
-        public async Task<bool> DeleteOrgAsync(int id)
-        {
-            await _orgRepository.DeleteAsync(id);
-            await _orgRepository.SaveChangesAsync();
-            return true;
-        }
     }
 }
